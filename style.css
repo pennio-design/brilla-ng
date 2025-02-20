@@ -38,10 +38,19 @@ header {
 }
 
 /* Navigation */
+.nav-links .cta-button-2 {
+    display: none;
+}
+.nav-links {
+    display: flex;
+    text-align: center;
+}
+
 .nav-links ul {
     display: flex;
     list-style: none;
     gap: 20px;
+    text-align: center;
 }
 
 .nav-links a {
@@ -50,14 +59,28 @@ header {
     font-size: 16px;
 }
 
-/* CTA Button */
+/* Desktop CTA Button (Visible Only on Desktop) */
 .cta-button {
+    display: block;
     padding: 10px 20px;
     background: #FFC107;
     color: #004085;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    margin-left: 20px;
+}
+
+/* Mobile CTA Button (Hidden by Default) */
+.cta-button-2 {
+    display: none;
+    padding: 10px 20px;
+    background: #FFC107;
+    color: #004085;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
 }
 
 /* Menu Toggle (Hamburger) */
@@ -148,7 +171,7 @@ header {
 .service-cards {
     display: flex;
     justify-content: center;
-    gap: 20px ;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
@@ -253,25 +276,64 @@ footer {
     padding: 20px;
 }
 
-/* Responsive Styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
-    .nav-links ul {
-        flex-direction: column;
-        gap: 10px;
-    }
     .nav-links {
         display: none;
-        background: #004085;
-        width: 100%;
         position: absolute;
         top: 70px;
         left: 0;
-        padding: 10px 0;
+        width: 100%;
+        background: #fff;  /* White background for mobile menu */
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
     }
-    .nav-links.active {
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Style the individual menu items as clickable blocks */
+    .nav-links ul li a {
         display: block;
+        width: 100%;
+        padding: 10px 0;
+        color: #004085; /* Suitable text color */
+        text-decoration: none;
+        font-size: 16px;
     }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Hide Desktop CTA, Show Mobile CTA */
+    .cta-button {
+        display: none;
+    }
+
+    .nav-links .cta-button-2 {
+        display: block;
+        width: 80%;
+        margin: 15px auto 0;
+        text-align: center;
+	color: #004085
+    }
+
+    /* Hamburger Icon */
     .menu-toggle {
         display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu-toggle i {
+        transition: transform 0.3s ease;
+    }
+
+    .menu-toggle.active i {
+        transform: rotate(180deg);
     }
 }

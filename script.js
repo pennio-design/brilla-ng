@@ -1,10 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
     let menuToggle = document.querySelector(".menu-toggle");
     let navLinks = document.querySelector(".nav-links");
+    let menuIcon = menuToggle.querySelector("i");
 
-    // Toggle mobile menu
     menuToggle.addEventListener("click", function () {
         navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+
+        // Toggle between hamburger and "X" icon
+        if (menuIcon.classList.contains("fa-bars")) {
+            menuIcon.classList.remove("fa-bars");
+            menuIcon.classList.add("fa-times");
+        } else {
+            menuIcon.classList.remove("fa-times");
+            menuIcon.classList.add("fa-bars");
+        }
+    });
+
+    // Collapse the hamburger menu when any nav link is clicked
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+            // Reset the icon back to hamburger
+            menuIcon.classList.remove("fa-times");
+            menuIcon.classList.add("fa-bars");
+        });
     });
 
     // Smooth scrolling for navigation links
@@ -33,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(showTestimonial, 5000);
     showTestimonial();
-});
-document.addEventListener("DOMContentLoaded", function () {
+
+    // Form Submission Handling
     let form = document.querySelector(".contact-form");
 
     form.addEventListener("submit", function (event) {
@@ -42,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let formData = new FormData(form);
 
-        fetch("https://formsubmit.co/YOUR_EMAIL", {
+        fetch("https://formsubmit.co/brilla.co.ng@gmail.com", {
             method: "POST",
             body: formData
         })
