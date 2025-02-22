@@ -267,7 +267,10 @@ header {
     height: 40px;
     line-height: 20px;
 }
-
+.social-icons a.whatsapp {
+    background: #25D366; /* WhatsApp green */
+    color: white;
+}
 /* Footer */
 footer {
     background: #343a40;
