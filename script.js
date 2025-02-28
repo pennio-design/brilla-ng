@@ -80,3 +80,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const loadingMessage = document.getElementById("loading-message");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page reload
+
+        submitBtn.disabled = true;
+        loadingMessage.style.display = "block";
+        loadingMessage.textContent = "Sending...";
+
+        let formData = new FormData(form);
+
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.ok ? response.text() : Promise.reject("Form submission failed"))
+        .then(() => {
+            loadingMessage.textContent = "Message sent successfully!";
+            form.reset(); // Clear the form
+            submitBtn.disabled = false;
+            setTimeout(() => { loadingMessage.style.display = "none"; }, 3000);
+        })
+        .catch(() => {
+            loadingMessage.textContent = "Something went wrong. Please try again.";
+            submitBtn.disabled = false;
+        });
+    });
+});
