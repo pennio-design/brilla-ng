@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let formData = new FormData(form);
 
-        fetch("https://formsubmit.co/brilla.co.ng@gmail.com", {
+        fetch("https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb", {
             method: "POST",
             body: formData
         })
