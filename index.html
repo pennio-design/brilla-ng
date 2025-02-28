@@ -100,12 +100,14 @@
   <section id="contact" class="contact">
     <h2>Book a Cleaning Today</h2>
     <p>Let’s give your space the shine it deserves.</p>
-    <form class="contact-form" action="https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
+    <form id="contact-form" action="https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
+        <button type="submit" id="submit-btn">Send</button>
+        <p id="loading-message" style="display: none;">Sending...</p>
     </form>
+
     <h2>Or</h2>
     <a href="tel:08146228911" class="cta-button">Call 08146228911</a>
   </section>
