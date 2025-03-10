@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://brilla.ng/sitemap.xml
