@@ -340,3 +340,10 @@ footer {
         transform: rotate(180deg);
     }
 }
+/* Adjust button size for desktop */
+@media screen and (min-width: 768px) {
+  .cta-button, .cta-button-2 {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+	    }
