@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Brillá.ng offers professional cleaning services that bring sparkle to your space. Shine beyond clean with our expert home, office, and post-construction cleaning services.">
-  <meta name="keywords" content="cleaning services, home cleaning, office cleaning, post-construction cleaning, professional cleaners, Brillá.ng">
-  <meta name="author" content="Brillá.ng">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brillá.ng offers professional cleaning services that bring sparkle to your space. Shine beyond clean with our expert home, office, and post-construction cleaning services." />
+  <meta name="keywords" content="cleaning services, home cleaning, office cleaning, post-construction cleaning, professional cleaners, Brillá.ng" />
+  <meta name="author" content="Brillá.ng" />
   <title>Brillá.ng - Shine Beyond Clean</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
 
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="images/logo.png" alt="Brillá.ng Logo">
+      <img src="images/logo.png" alt="Brillá.ng Logo" />
     </div>
     <nav class="nav-links">
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="cta-button-2">Book Now</a>
@@ -50,7 +50,7 @@
     <div class="about-content">
       <h2>About Brillá.ng</h2>
       <p>Brillá.ng is a professional cleaning service dedicated to providing top-notch cleaning solutions for homes and businesses. We believe in excellence, reliability, and a cleaner, healthier environment for everyone.</p>
-      <a href="about.html" class="cta-button">Learn More</a>
+      <a href="#services" class="cta-button">Our Services</a>
     </div>
   </section>
 
@@ -59,22 +59,24 @@
     <h2>Our Cleaning Services</h2>
     <div class="service-cards">
       <div class="service-card">
-        <img src="images/service-1.jpg" alt="Home Cleaning">
+        <img src="images/service-1.jpg" alt="Home Cleaning" />
         <h3>Home Cleaning</h3>
         <p>We keep your home fresh, tidy, and spotless.</p>
+        <a href="#contact" class="cta-button" onclick="prefillService('Home Cleaning')">Book Home Cleaning</a>
       </div>
       <div class="service-card">
-        <img src="images/service-2.jpg" alt="Office Cleaning">
+        <img src="images/service-2.jpg" alt="Office Cleaning" />
         <h3>Office Cleaning</h3>
         <p>Maintain a clean and productive work environment.</p>
+        <a href="#contact" class="cta-button" onclick="prefillService('Office Cleaning')">Book Office Cleaning</a>
       </div>
       <div class="service-card">
-        <img src="images/service-3.jpg" alt="Post-Construction Cleaning">
+        <img src="images/service-3.jpg" alt="Post-Construction Cleaning" />
         <h3>Post-Construction Cleaning</h3>
         <p>Transform your new space into a dust-free, livable area.</p>
+        <a href="#contact" class="cta-button" onclick="prefillService('Post-Construction Cleaning')">Book Post-Construction</a>
       </div>
     </div>
-    <a href="services.html" class="cta-button">View All Services</a>
   </section>
 
   <!-- Testimonials Section -->
@@ -82,17 +84,17 @@
     <h2>What Our Clients Say</h2>
     <div class="testimonial-container">
       <div class="testimonial">
-        <img src="images/testimonial-1.jpg" alt="Client 1">
+        <img src="images/testimonial-1.jpg" alt="Client 1" />
         <p>"Brillá.ng left my home sparkling! Highly recommended."</p>
         <h4>- Tolu A.</h4>
       </div>
       <div class="testimonial">
-        <img src="images/testimonial-2.jpg" alt="Client 2">
+        <img src="images/testimonial-2.jpg" alt="Client 2" />
         <p>"Exceptional service! My office has never looked this clean."</p>
         <h4>- Chinedu O.</h4>
       </div>
     </div>
-    <a href="testimonials.html" class="cta-button">See More Testimonials</a>
+    <a href="#contact" class="cta-button">Get Started</a>
   </section>
 
   <!-- Contact Section -->
@@ -100,12 +102,19 @@
     <h2>Book a Cleaning Today</h2>
     <p>Let’s give your space the shine it deserves.</p>
     <form id="contact-form" class="contact-form" action="https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" id="submit-btn">Send</button>
-        <p id="loading-message" style="display: none;">Sending...</p>
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_subject" value="New Booking Request via Brillá.ng">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <select name="service" id="service-select" required>
+        <option value="">Select a Service</option>
+        <option value="Home Cleaning">Home Cleaning</option>
+        <option value="Office Cleaning">Office Cleaning</option>
+        <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+      </select>
+      <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
+      <button type="submit" id="submit-btn">Send</button>
+      <p id="loading-message" style="display: none;">Sending...</p>
     </form>
 
     <h2>Or</h2>
@@ -125,5 +134,12 @@
     <p>&copy; 2025 Brillá.ng. Shine Beyond Clean.</p>
   </footer>
 
+  <script>
+    function prefillService(serviceType) {
+      const select = document.getElementById("service-select");
+      select.value = serviceType;
+      document.getElementById("service-select").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 </body>
 </html>
