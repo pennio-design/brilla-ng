@@ -119,20 +119,25 @@
     <h2>Book a Cleaning Today</h2>
     <p>Let’s give your space the shine it deserves.</p>
     <form id="contact-form" class="contact-form" action="https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_subject" value="New Booking Request via Brillá.ng">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <select name="service" id="service-select" required class="form-select">
-        <option value="">Select a Service</option>
-        <option value="Home Cleaning">Home Cleaning</option>
-        <option value="Office Cleaning">Office Cleaning</option>
-        <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
-      </select>
-      <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
-      <button type="submit" id="submit-btn">Send</button>
-      <p id="loading-message" style="display: none;">Sending...</p>
-    </form>
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_subject" value="New Booking Request via Brillá.ng" />
+
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+
+  <!-- Consistently styled service selector -->
+  <select name="service" id="service-select" required>
+    <option value="">Select a Service</option>
+    <option value="Home Cleaning">Home Cleaning</option>
+    <option value="Office Cleaning">Office Cleaning</option>
+    <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+  </select>
+
+  <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
+  
+  <button type="submit" id="submit-btn">Send</button>
+  <p id="loading-message" style="display: none;">Sending...</p>
+</form>
 
     <h2>Or</h2>
     <a href="tel:08146228911" class="cta-button">Call 08146228911</a>
