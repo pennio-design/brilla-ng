@@ -1,17 +1,44 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Brilla NG offers professional home and office cleaning services across Nigeria. Discover why homes and businesses trust Brillá.ng to shine beyond clean." />
   <meta name="keywords" content="cleaning services, home cleaning, office cleaning, post-construction cleaning, professional cleaners, Brillá.ng, Brilla NG" />
   <meta name="author" content="Brillá.ng" />
-  <title>Brilla NG - Professional Cleaning Services in Nigeria | Brillá.ng</title>
-  <link rel="canonical" href="https://brilla.ng" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://brilla.ng" />
+  <title>Brilla NG - Professional Cleaning Services in Nigeria | Brillá.ng</title>
+
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Brilla NG",
+    "url": "https://brilla.ng",
+    "logo": "https://brilla.ng/images/logo.png",
+    "description": "Professional home and office cleaning services in Nigeria",
+    "telephone": "+2348146228911",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NG"
+    }
+  }
+  </script>
+
+  <style>
+    @media (max-width: 768px) {
+      .service-cta {
+        display: inline-block !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -29,19 +56,25 @@
     </nav>
     <a href="#contact" class="cta-button">Book Now</a>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-  </header>  <section class="hero">
+  </header>
+
+  <section class="hero">
     <div class="hero-content">
       <h1>Brilla NG - Shine Beyond Clean</h1>
       <p>Discover why Brilla NG (also known as Brillá.ng) is Nigeria’s go-to for residential and commercial cleaning. We bring sparkle to every space — reliably and professionally.</p>
       <a href="#contact" class="cta-button">Get Started</a>
     </div>
-  </section>  <section id="about" class="about">
+  </section>
+
+  <section id="about" class="about">
     <div class="about-content">
       <h2>About Brillá.ng</h2>
       <p>Brillá.ng is a professional cleaning service dedicated to providing top-notch cleaning solutions for homes and businesses. We believe in excellence, reliability, and a cleaner, healthier environment for everyone.</p>
       <a href="#services" class="cta-button cta-mobile">Our Services</a>
     </div>
-  </section>  <section id="services" class="services">
+  </section>
+
+  <section id="services" class="services">
     <h2>Our Cleaning Services</h2>
     <div class="service-cards">
       <div class="service-card">
@@ -63,7 +96,9 @@
         <a href="#contact" class="cta-button service-cta" onclick="prefillService('Post-Construction Cleaning')">Book Post-Construction</a>
       </div>
     </div>
-  </section>  <section id="testimonials" class="testimonials">
+  </section>
+
+  <section id="testimonials" class="testimonials">
     <h2>What Our Clients Say</h2>
     <div class="testimonial-container">
       <div class="testimonial">
@@ -78,7 +113,9 @@
       </div>
     </div>
     <a href="#contact" class="cta-button">Get Started</a>
-  </section>  <section id="contact" class="contact">
+  </section>
+
+  <section id="contact" class="contact">
     <h2>Book a Cleaning Today</h2>
     <p>Let’s give your space the shine it deserves.</p>
     <form id="contact-form" class="contact-form" action="https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
@@ -86,7 +123,7 @@
       <input type="hidden" name="_subject" value="New Booking Request via Brillá.ng">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
-      <select name="service" id="service-select" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%;">
+      <select name="service" id="service-select" required class="form-select">
         <option value="">Select a Service</option>
         <option value="Home Cleaning">Home Cleaning</option>
         <option value="Office Cleaning">Office Cleaning</option>
@@ -95,21 +132,29 @@
       <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
       <button type="submit" id="submit-btn">Send</button>
       <p id="loading-message" style="display: none;">Sending...</p>
-    </form><h2>Or</h2>
-<a href="tel:08146228911" class="cta-button">Call 08146228911</a>
+    </form>
 
-  </section>  <div class="social-icons">
+    <h2>Or</h2>
+    <a href="tel:08146228911" class="cta-button">Call 08146228911</a>
+  </section>
+
+  <div class="social-icons">
     <a href="https://facebook.com/brilla.ng" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="https://twitter.com/brilla.ng" target="_blank"><i class="fa-brands fa-twitter"></i></a>
     <a href="https://instagram.com/brilla.ng" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://wa.me/2348146228911" target="_blank" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
-  </div>  <footer>
+  </div>
+
+  <footer>
     <p>&copy; 2025 Brillá.ng. Shine Beyond Clean.</p>
-  </footer>  <script>
+  </footer>
+
+  <script>
     function prefillService(serviceType) {
       const select = document.getElementById("service-select");
       select.value = serviceType;
       document.getElementById("service-select").scrollIntoView({ behavior: "smooth" });
     }
-  </script></body>
+  </script>
+</body>
 </html>
