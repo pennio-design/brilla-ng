@@ -31,6 +31,12 @@ header {
     z-index: 1000;
 }
 
+header .cta-button {
+  position: sticky;
+  top: 15px;
+  z-index: 999;
+}
+
 .logo img {
     height: 40px;
     width: auto;
@@ -342,6 +348,13 @@ footer {
         transform: rotate(180deg);
     }
 }
+
+#loading-message {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
 /* Adjust button size for desktop */
 @media screen and (min-width: 768px) {
   .cta-button, .cta-button-2 {
