@@ -1,86 +1,96 @@
+<!-- blog/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <title>Brilla NG Blog - Cleaning Tips & Professional Service Guides</title>
+  <title>Brilla NG Cleaning Blog | Tips & Insights for a Cleaner Space</title>
   <link rel="stylesheet" href="/style.css" />
   <style>
     body {
       font-family: 'Raleway', sans-serif;
       padding: 40px 20px;
-      max-width: 800px;
+      max-width: 960px;
       margin: auto;
       line-height: 1.6;
     }
-
-    h1, h2 {
+    h1 {
       color: #004085;
+      text-align: center;
     }
-
-    .post-list {
+    ul.blog-list {
       list-style: none;
       padding: 0;
+      margin-top: 30px;
     }
-
-    .post-list li {
+    ul.blog-list li {
       margin-bottom: 30px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #ddd;
       padding-bottom: 20px;
     }
-
-    .post-list a {
+    ul.blog-list li h2 {
+      margin: 0 0 10px;
       color: #004085;
-      text-decoration: none;
     }
-
-    .post-list a:hover {
+    ul.blog-list li a {
+      color: #004085;
       text-decoration: underline;
     }
-
-    .tag {
-      background: #FFC107;
-      color: #004085;
-      font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 3px;
-      display: inline-block;
-      margin-bottom: 10px;
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #777;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Brilla NG Cleaning Blog</h1>
-  <p>Explore helpful tips, guides, and insights about home and office cleaning in Nigeria.</p>
+  <header>
+    <a href="/" aria-label="Brilla NG">
+      <div class="logo">
+        <img src="/images/logo.png" alt="Brillá.ng Logo" loading="lazy" />
+      </div>
+    </a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="/#about" aria-label="About Brilla NG">About</a></li>
+        <li><a href="/#services" aria-label="Brilla NG Services">Our Services</a></li>
+        <li><a href="/#testimonials" aria-label="Brilla NG Testimonials">Testimonials</a></li>
+        <li><a href="/#contact" aria-label="Contact Brilla NG">Contact</a></li>
+      </ul>
+      <a href="/#contact" class="cta-button-2" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    </nav>
+    <a href="/#contact" class="cta-button" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  </header>
 
-  <ul class="post-list">
+  <h1>Brilla NG Cleaning Blog</h1>
+  <p style="text-align: center;">Explore helpful tips, guides, and insights about home and office cleaning in Nigeria.</p>
+
+  <ul class="blog-list">
     <li>
-      <span class="tag">Tips</span>
-      <h2><a href="how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service in Nigeria</a></h2>
+      <h2><a href="/blog/how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service in Nigeria</a></h2>
       <p>Don’t just pick the cheapest! Learn what to look for when hiring a cleaner in Lagos or anywhere in Nigeria.</p>
     </li>
-
     <li>
-      <span class="tag">Insights</span>
-      <h2><a href="affordable-cleaning-lagos.html">Affordable Cleaning Services in Lagos — What to Expect</a></h2>
+      <h2><a href="/blog/affordable-cleaning-lagos.html">Affordable Cleaning Services in Lagos — What to Expect</a></h2>
       <p>How to balance price and quality when booking a professional cleaner in Lagos (and why Brilla NG leads).</p>
     </li>
-
     <li>
-      <span class="tag">Post-Construction</span>
-      <h2><a href="post-construction-checklist.html">Post-Construction Cleaning Checklist: Before & After Your Renovation</a></h2>
+      <h2><a href="/blog/post-construction-checklist.html">Post-Construction Cleaning Checklist: Before & After Renovation</a></h2>
       <p>What you need to clean, why it matters, and how professionals handle the toughest post-construction messes.</p>
     </li>
-
     <li>
-      <span class="tag">How-To</span>
-      <h2><a href="diy-cleaning-vs-pros.html">DIY Cleaning vs Professional Cleaners: What's the Difference?</a></h2>
+      <h2><a href="/blog/diy-cleaning-vs-pros.html">DIY Cleaning vs Professional Cleaners: What's the Difference?</a></h2>
       <p>A comparison that helps homeowners understand why expert cleaners save time and reduce stress.</p>
     </li>
   </ul>
 
-  <p><a href="/">← Back to Home</a></p>
+  <footer>
+    <p>&copy; 2025 Brillá.ng. Shine Beyond Clean.</p>
+  </footer>
+
 </body>
 </html>
