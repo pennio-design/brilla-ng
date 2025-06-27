@@ -199,6 +199,26 @@ header .cta-button {
     border-radius: 8px;
 }
 
+/* Why Choose Us Section */
+.why-us {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.why-us .reasons {
+  list-style: none;
+  padding: 0;
+}
+.why-us li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+.why-us i {
+  color: #25D366;
+  margin-right: 8px;
+}
+
+
 /* Testimonials Section */
 .testimonials {
     padding: 60px 20px;
@@ -347,6 +367,18 @@ footer {
     .menu-toggle.active i {
         transform: rotate(180deg);
     }
+}
+
+.instagram-feed {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+.insta-frame {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: none;
 }
 
 #loading-message {
