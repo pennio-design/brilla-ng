@@ -307,6 +307,15 @@ footer {
     padding: 20px;
     margin: 0;
 }
+footer a {
+  text-decoration: none;
+  color: #FFC107; /* Brilla's accent yellow */
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #FFA000; /* Slightly darker on hover */
+}
 
 /* Mobile Styles */
 @media (max-width: 768px) {
