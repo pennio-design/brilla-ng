@@ -3,34 +3,40 @@ document.addEventListener("DOMContentLoaded", function () {
     let navLinks = document.querySelector(".nav-links");
     let menuIcon = menuToggle.querySelector("i");
 
-    menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-        menuToggle.classList.toggle("active");
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            menuToggle.classList.toggle("active");
 
-        if (menuIcon.classList.contains("fa-bars")) {
-            menuIcon.classList.replace("fa-bars", "fa-times");
-        } else {
-            menuIcon.classList.replace("fa-times", "fa-bars");
-        }
-    });
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-            menuToggle.classList.remove("active");
-            menuIcon.classList.replace("fa-times", "fa-bars");
+            if (menuIcon.classList.contains("fa-bars")) {
+                menuIcon.classList.replace("fa-bars", "fa-times");
+            } else {
+                menuIcon.classList.replace("fa-times", "fa-bars");
+            }
         });
-    });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuIcon.classList.replace("fa-times", "fa-bars");
+            });
+        });
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 50,
-                    behavior: "smooth"
-                });
+            const href = this.getAttribute("href");
+            // Only prevent default and scroll if it's an internal anchor link
+            if (href.length > 1 && href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - (document.querySelector('header')?.offsetHeight || 0), // Adjust for fixed header height
+                        behavior: "smooth"
+                    });
+                }
             }
         });
     });
@@ -39,38 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let index = 0;
 
     function showTestimonial() {
+        if (testimonials.length === 0) return; // Prevent error if no testimonials
         testimonials.forEach(t => t.style.display = "none");
         testimonials[index].style.display = "block";
         index = (index + 1) % testimonials.length;
     }
 
-    setInterval(showTestimonial, 5000);
-    showTestimonial();
-
-    let form = document.querySelector(".contact-form");
-    if (form) {
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            let formData = new FormData(form);
-
-            fetch("https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert("Message sent successfully!");
-                    form.reset();
-                } else {
-                    alert("Something went wrong. Try again.");
-                }
-            })
-            .catch(error => {
-                alert("Error: " + error.message);
-            });
-        });
+    if (testimonials.length > 0) {
+        setInterval(showTestimonial, 5000);
+        showTestimonial();
     }
+
 
     const contactForm = document.getElementById("contact-form");
     const submitBtn = document.getElementById("submit-btn");
@@ -81,8 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
             submitBtn.disabled = true;
-            loadingMessage.style.display = "block";
-            loadingMessage.textContent = "Sending...";
+            if (loadingMessage) {
+                loadingMessage.style.display = "block";
+                loadingMessage.textContent = "Sending...";
+            }
 
             let formData = new FormData(contactForm);
 
@@ -90,15 +77,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 body: formData,
             })
-            .then(response => response.ok ? response.text() : Promise.reject("Form submission failed"))
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    return Promise.reject("Form submission failed");
+                }
+            })
             .then(() => {
-                loadingMessage.textContent = "Message sent successfully!";
+                if (loadingMessage) {
+                    loadingMessage.textContent = "Message sent successfully!";
+                }
                 contactForm.reset();
                 submitBtn.disabled = false;
-                setTimeout(() => { loadingMessage.style.display = "none"; }, 3000);
+                setTimeout(() => { if (loadingMessage) loadingMessage.style.display = "none"; }, 3000);
             })
             .catch(() => {
-                loadingMessage.textContent = "Something went wrong. Please try again.";
+                if (loadingMessage) {
+                    loadingMessage.textContent = "Something went wrong. Please try again.";
+                }
                 submitBtn.disabled = false;
             });
         });
