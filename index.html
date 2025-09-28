@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +8,13 @@
   <meta name="author" content="Brillá.ng" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://brilla.ng/" />
-  <title>Brilla NG - Professional Cleaning Services in Lagos | Brillá.ng</title>  <link rel="stylesheet" href="style.css" />
+  <title>Brilla NG - Professional Cleaning Services in Lagos | Brillá.ng</title>
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />  <!-- Structured Data -->  <script type="application/ld+json">
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -24,17 +28,215 @@
       "addressCountry": "NG"
     }
   }
-  </script>  <style>
-    @media (max-width: 768px) {
-      .service-cta {
-        display: inline-block !important;
-      }
-    }
-  </style></head>
+  </script>
+</head>
 <body>
   <header>
     <a href="/" aria-label="Brilla NG">
       <div class="logo">
+      <img src="images/logo.png" alt="Brillá.ng Logo"  loading="lazy"/>
+    </div>
+    </a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#about" aria-label="About Brilla NG">About</a></li>
+        <li><a href="#how-it-works" aria-label="How Brilla NG Works">How It Works</a></li>
+        <li><a href="#services" aria-label="Brilla NG Services">Our Services</a></li>
+        <li><a href="#testimonials" aria-label="Book a cleaning with Brilla NG">Testimonials</a></li>
+        <li><a href="#faq" aria-label="Brilla NG FAQs">FAQ</a></li>
+        <li><a href="#contact" aria-label="Book a cleaning with Brilla NG">Contact</a></li>
+        <li><a href="/blog/" aria-label="Brilla NG Blog">Blog</a></li>
+      </ul>
+      <a href="#contact" class="cta-button-2" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    </nav>
+    <a href="#contact" class="cta-button" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  </header>  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Reclaim Your Time, We'll Handle the Shine: Professional Cleaning Services in Lagos</h1>
+      <p>Brilla.ng delivers impeccable residential & commercial cleaning, giving you peace of mind and a spotless environment, reliably and professionally.</p>
+      <div class="hero-ctas">
+          <a href="#contact" class="cta-button hero-cta-primary" aria-label="Get a Free Home Cleaning Quote">Get a Free Home Cleaning Quote</a>
+          <a href="#contact" class="cta-button hero-cta-secondary" aria-label="Request Office Cleaning Service">Request Office Cleaning Service</a>
+      </div>
+      <p class="trust-text"><i class="fas fa-star"></i> Trusted by 100+ clients across Nigeria</p>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="how-it-works section-padding">
+      <div class="container">
+          <h2>Our Simple 3-Step Process</h2>
+          <div class="steps-grid">
+              <div class="step-item">
+                  <div class="step-icon"><i class="fas fa-hand-pointer"></i></div>
+                  <h3>1. Choose Your Service</h3>
+                  <p>Select the perfect cleaning service for your home or office needs.</p>
+              </div>
+              <div class="step-item">
+                  <div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <h3>2. Schedule Online / Call</h3>
+                  <p>Book your preferred date and time, or simply give us a call.</p>
+              </div>
+              <div class="step-item">
+                  <div class="step-icon"><i class="fas fa-sparkles"></i></div>
+                  <h3>3. Enjoy a Spotless Space</h3>
+                  <p>Our professional team ensures your space is impeccably clean.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>About Brillá.ng</h2>
+      <p>Brillá.ng is a professional cleaning service dedicated to providing top-notch cleaning solutions for homes and businesses. We believe in excellence, reliability, and a cleaner, healthier environment for everyone.</p>
+      <a href="#services" class="cta-button cta-mobile" aria-label="Brilla NG Services">Our Services</a>
+    </div>
+  </section>
+  
+  <section id="services" class="services">
+    <h2>Our Cleaning Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <img src="images/service-1.jpg" alt="Home Cleaning - Professional cleaning for your residence" loading="lazy" />
+        <h3>Home Cleaning</h3>
+        <p>We keep your home fresh, tidy, and spotless.</p>
+        <a href="#contact" class="cta-button service-cta" onclick="prefillService('Home Cleaning')" aria-label="Book Home Cleaning with Brilla NG">Book Home Cleaning</a>
+      </div>
+      <div class="service-card">
+        <img src="images/service-2.jpg" alt="Office Cleaning - Maintain a clean workspace for productivity" loading="lazy" />
+        <h3>Office Cleaning</h3>
+        <p>Maintain a clean and productive work environment.</p>
+        <a href="#contact" class="cta-button service-cta" onclick="prefillService('Office Cleaning')" aria-label="Book Office Cleaning with Brilla NG">Book Office Cleaning</a>
+      </div>
+      <div class="service-card">
+        <img src="images/service-3.jpg" alt="Post-Construction Cleaning - Expert cleanup after renovations" loading="lazy" />
+        <h3>Post-Construction Cleaning</h3>
+        <p>Transform your new space into a dust-free, livable area.</p>
+        <a href="#contact" class="cta-button service-cta" onclick="prefillService('Post-Construction Cleaning')" aria-label="Book Post-Construction Cleaning with Brilla NG">Book Post-Construction</a>
+      </div>
+    </div>
+  </section>  
+  <section class="why-us">
+  <h2>Why Choose Brilla NG?</h2>
+  <ul class="reasons">
+    <li><i class="fas fa-check-circle"></i> Trusted by 100+ clients across Nigeria</li>
+    <li><i class="fas fa-check-circle"></i> Vetted, professional cleaners</li>
+    <li><i class="fas fa-check-circle"></i> Transparent pricing, no surprises</li>
+    <li><i class="fas fa-check-circle"></i> Easy booking via phone or web</li>
+  </ul>
+  </section>
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <img src="images/testimonial-1.jpg" alt="Client Tolu A." loading="lazy" />
+        <p>"Brillá.ng left my home sparkling! Highly recommended."</p>
+        <h4>- Tolu A.</h4>
+      </div>
+      <div class="testimonial">
+        <img src="images/testimonial-2.jpg" alt="Client Chinedu O." loading="lazy" />
+        <p>"Exceptional service! My office has never looked this clean."</p>
+        <h4>- Chinedu O.</h4>
+      </div>
+    </div>
+    <a href="#contact" class="cta-button" aria-label="Get Started with Brilla NG">Get Started</a>
+  </section>  
+
+  <section id="faq" class="faq-section section-padding bg-light">
+      <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-items">
+              <div class="faq-item">
+                  <h3>How do I book a cleaning service?</h3>
+                  <p>You can easily book online through our contact form above or by calling us directly at +234 814 622 8911.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>Are your cleaners vetted and insured?</h3>
+                  <p>Yes, all our cleaners undergo thorough background checks and are fully insured for your peace of mind and protection.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>What areas in Lagos do you cover?</h3>
+                  <p>We provide professional cleaning services across various locations in Lagos. Please contact us to confirm service availability in your specific area.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>Do I need to provide cleaning supplies?</h3>
+                  <p>No, our team comes fully equipped with all the necessary professional-grade cleaning supplies and equipment to get the job done right.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Book a Cleaning Today</h2>
+    <p>Let’s give your space the shine it deserves.</p>
+    <form id="contact-form" class="contact-form" action="https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_subject" value="New Booking Request via Brillá.ng">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="tel" name="phone" placeholder="Your Phone Number (e.g., 08012345678)" required /> <!-- ADDED PHONE FIELD -->
+      <select name="service" id="service-select" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; font-family: 'Raleway', sans-serif; font-size: 14px;">
+        <option value="">Select a Service</option>
+        <option value="Home Cleaning">Home Cleaning</option>
+        <option value="Office Cleaning">Office Cleaning</option>
+        <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+      </select>
+      <textarea name="message" placeholder="Additional Details (Optional)" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; font-family: 'Raleway', sans-serif; font-size: 14px;"></textarea>
+      <button type="submit" id="submit-btn">Send</button>
+      <p id="loading-message" style="display: none;">Sending...</p>
+    </form>
+    <h2>Or</h2>
+    <a href="tel:08146228911" class="cta-button" aria-label="Call Brilla NG">Call 08146228911</a>
+  </section>  
+
+  <section id="blog-highlights" class="blog-highlights-section section-padding bg-light">
+      <div class="container">
+          <h2>Latest from Our Blog</h2>
+          <div class="blog-grid">
+              <div class="blog-post-card">
+                  <img src="images/blog-1.jpg" alt="Eco-Friendly Cleaning Tips" loading="lazy">
+                  <h3><a href="/blog/how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service for Your Needs</a></h3>
+                  <p>Finding the perfect cleaning service can be daunting. Here are key factors to consider.</p>
+                  <a href="/blog/how-to-choose-cleaning-service.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="blog-post-card">
+                  <img src="images/blog-2.jpg" alt="Office Hygiene" loading="lazy">
+                  <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Cleaning Services in Lagos: Quality You Can Trust</a></h3>
+                  <p>Discover how Brilla.ng offers top-tier cleaning solutions at competitive prices in Lagos.</p>
+                  <a href="/blog/affordable-cleaning-lagos.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="blog-post-card">
+                  <img src="images/blog-3.jpg" alt="Post-Construction Checklist" loading="lazy">
+                  <h3><a href="/blog/post-construction-checklist.html">Your Ultimate Post-Construction Cleaning Checklist</a></h3>
+                  <p>Ensure your newly renovated space is spotless and ready for occupancy with our comprehensive guide.</p>
+                  <a href="/blog/post-construction-checklist.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <div class="social-icons">
+    <a href="https://facebook.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://twitter.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://instagram.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://wa.me/2348146228911" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+    <footer>
+    <p>&copy; 2025 Brillá.ng. Shine Beyond Clean.</p>
+    <p><a href="/lagos-cleaning-services.html">Lagos Cleaning Services</a></p>
+  </footer>  <script>
+    function prefillService(serviceType) {
+      const select = document.getElementById("service-select");
+      if (select) { // Ensure the select element exists before trying to set its value
+          select.value = serviceType;
+          document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to contact section
+      }
+    }
+  </script>
+</body>
+      </html>      <div class="logo">
       <img src="images/logo.png" alt="Brillá.ng Logo"  loading="lazy"/>
     </div>
     </a>
