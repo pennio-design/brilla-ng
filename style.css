@@ -8,17 +8,28 @@
     font-variant-ligatures: none;
 }
 
-p {
-    padding: 10px;
-}
 body {
     background-color: #F8F9FA;
     color: #333;
     line-height: 1.6;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Add horizontal padding for smaller screens */
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: #e3f2fd; /* Consistent light blue background */
+}
+
 h1, h2, h3 {
-    color: #004085;
+    color: #004085; /* Primary blue for headings */
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -26,6 +37,11 @@ h1, h2, h3 {
 h1 { font-size: 2.8em; }
 h2 { font-size: 2.2em; }
 h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 15px;
+    color: #666; /* Lighter text for paragraphs */
+}
 
 
 /* Header */
@@ -40,11 +56,6 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-}
-
-header .cta-button {
-  /* This specific CTA is for desktop, positioning below is handled by flex */
-  z-index: 999; /* Ensure it's above other elements */
 }
 
 .logo img {
@@ -79,70 +90,57 @@ header .cta-button {
     color: #FFC107; /* Accent yellow on hover */
 }
 
-/* Desktop CTA Button (Visible Only on Desktop) */
+/* CTA Buttons (General Styling) */
 .cta-button {
-    display: block;
+    display: inline-block; /* Ensure consistent inline-block for general use */
     padding: 10px 20px;
     background: #FFC107;
     color: #004085;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    margin-left: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent; /* Default transparent border */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .cta-button:hover {
     background: #FFA000;
-}
-
-/* Mobile CTA Button (Hidden by Default) */
-.cta-button-2 {
-    display: none;
-    padding: 10px 20px;
-    background: #FFC107;
     color: #004085;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
 }
 
-.cta-button-2:hover {
-    background: #FFA000;
+/* Desktop Header CTA */
+header .cta-button {
+    margin-left: 20px;
 }
 
-/* Menu Toggle (Hamburger) */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
 
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg') center/cover no-repeat;
-    height: 550px; /* Slightly increased height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    min-height: 550px; /* Consistent height */
     padding-top: 80px; /* Offset fixed header */
     padding-bottom: 40px;
 }
 
+.hero .container {
+    padding-top: 40px; /* Adjust padding within container for hero content */
+    padding-bottom: 40px;
+}
+
 .hero-content {
-    max-width: 800px; /* Increased max-width */
-    padding: 20px;
-    /* Removed explicit background from here, relies on linear-gradient overlay */
+    max-width: 800px;
+    /* Removed background as linear-gradient handles overlay */
     border-radius: 8px;
 }
 
 .hero-content h1 {
-    font-size: 3.5em; /* Larger headline */
+    font-size: 3.5em;
     margin-bottom: 20px;
     color: #fff;
 }
@@ -151,7 +149,7 @@ header .cta-button {
     font-size: 1.2em;
     margin-bottom: 40px;
     color: #e0e0e0;
-    padding: 0; /* Remove padding from hero-content p */
+    padding: 0; /* Remove specific padding from hero content p */
 }
 
 .hero-ctas {
@@ -165,7 +163,7 @@ header .cta-button {
 .hero-cta-primary {
     background-color: #FFC107;
     color: #004085;
-    border: 2px solid #FFC107;
+    border-color: #FFC107;
     min-width: 250px;
 }
 
@@ -177,13 +175,14 @@ header .cta-button {
 .hero-cta-secondary {
     background-color: transparent;
     color: #fff;
-    border: 2px solid #fff;
+    border-color: #fff;
     min-width: 250px;
 }
 
 .hero-cta-secondary:hover {
     background-color: #fff;
     color: #004085;
+    border-color: #fff;
 }
 
 .trust-text {
@@ -199,9 +198,8 @@ header .cta-button {
 
 /* How It Works Section */
 .how-it-works {
-    padding: 60px 20px;
-    text-align: center;
     background: #fff;
+    text-align: center;
 }
 
 .how-it-works h2 {
@@ -229,7 +227,7 @@ header .cta-button {
 
 .step-icon {
     font-size: 3em;
-    color: #004085; /* Primary blue for icons */
+    color: #004085;
     margin-bottom: 20px;
 }
 
@@ -246,8 +244,7 @@ header .cta-button {
 
 /* About Section */
 .about {
-    padding: 60px 20px;
-    background: #F8F9FA; /* Changed background for distinction */
+    background: #F8F9FA;
     text-align: center;
 }
 
@@ -264,6 +261,7 @@ header .cta-button {
     margin: 20px 0;
 }
 
+/* Contact Form (within Contact Section) */
 .contact-form {
     margin-top: 30px;
     display: flex;
@@ -302,9 +300,8 @@ header .cta-button {
 
 /* Services Section */
 .services {
-    padding: 60px 20px;
+    background: #fff;
     text-align: center;
-    background: #fff; /* Changed background for distinction */
 }
 
 .services h2 {
@@ -325,6 +322,8 @@ header .cta-button {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex; /* Use flex to push button to bottom */
+    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -338,7 +337,7 @@ header .cta-button {
     height: 180px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px; /* Added margin */
+    margin-bottom: 15px;
 }
 
 .service-card h3 {
@@ -350,6 +349,7 @@ header .cta-button {
     font-size: 0.95em;
     color: #666;
     padding: 0;
+    flex-grow: 1; /* Allow paragraph to take up available space */
 }
 
 .service-card .cta-button {
@@ -359,8 +359,7 @@ header .cta-button {
 
 /* Why Choose Us Section */
 .why-us {
-  background: #F8F9FA; /* Changed background for distinction */
-  padding: 60px 20px;
+  background: #F8F9FA;
   text-align: center;
 }
 .why-us .reasons {
@@ -384,7 +383,6 @@ header .cta-button {
 
 /* Testimonials Section */
 .testimonials {
-    padding: 60px 20px;
     background: #e3f2fd;
     text-align: center;
 }
@@ -395,7 +393,7 @@ header .cta-button {
 
 .testimonial-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks on mobile */
     gap: 20px;
     align-items: center;
 }
@@ -403,7 +401,7 @@ header .cta-button {
 .testimonial {
     max-width: 600px;
     background: #fff;
-    padding: 30px; /* Increased padding */
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -413,7 +411,7 @@ header .cta-button {
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 15px; /* Increased margin */
+    margin-bottom: 15px;
 }
 
 .testimonial p {
@@ -433,9 +431,8 @@ header .cta-button {
 
 /* FAQ Section */
 .faq-section {
-    padding: 60px 20px;
-    text-align: center;
     background: #fff;
+    text-align: center;
 }
 
 .faq-section h2 {
@@ -459,7 +456,7 @@ header .cta-button {
 .faq-item h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
-    cursor: pointer; /* Suggests interactivity, though not implemented yet */
+    cursor: pointer;
     color: #004085;
 }
 
@@ -472,35 +469,18 @@ header .cta-button {
 
 /* Contact Section */
 .contact {
-    padding: 60px 20px;
-    text-align: center;
-    background: #004085; /* Deep Blue Background */
+    background: #004085;
     color: white;
+    text-align: center;
 }
 
 .contact h2, .contact p {
     color: white;
 }
 
-.contact a {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #FFC107; /* Accent Yellow */
-    color: #004085;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.contact a:hover {
-    background: #FFA000;
-}
-
 /* Blog Highlights Section */
 .blog-highlights-section {
-    padding: 60px 20px;
-    background: #e3f2fd; /* Light blue background for contrast */
+    background: #e3f2fd;
     text-align: center;
 }
 
@@ -555,6 +535,208 @@ header .cta-button {
 
 .blog-post-card p {
     font-size: 0.9em;
+    color: #666;
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.blog-post-card .read-more {
+    display: inline-block;
+    padding: 0 20px 20px;
+    font-weight: bold;
+    color: #004085;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-post-card .read-more:hover {
+    color: #FFC107;
+}
+
+.blog-post-card .read-more i {
+    margin-left: 5px;
+    font-size: 0.9em;
+}
+
+
+/* Floating Social Icons */
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons a {
+    color: white;
+    background: #004085;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background-color: #002D5A;
+}
+
+.social-icons a.whatsapp {
+    background: #25D366;
+    color: white;
+}
+.social-icons a.whatsapp:hover {
+    background: #1DA851;
+}
+
+/* Footer */
+footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+footer a {
+  text-decoration: none;
+  color: #FFC107;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #FFA000;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.3em; }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding-top: 70px; /* Adjust for potentially smaller mobile header */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .hero-ctas {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-ctas .cta-button {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Mobile Navigation Specifics */
+    header .cta-button { /* Hide desktop CTA */
+        display: none;
+    }
+    .nav-links .cta-button-2 { /* Show mobile CTA */
+        display: block;
+        width: 80%;
+        max-width: 250px;
+        margin: 15px auto 0;
+        text-align: center;
+	    color: #004085;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 70px; /* Below header */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        color: #004085;
+        text-decoration: none;
+        font-size: 16px;
+    }
+    .menu-toggle i {
+        transition: transform 0.3s ease;
+    }
+    .menu-toggle.active i {
+        transform: rotate(180deg);
+    }
+
+    /* Grids stack on mobile */
+    .steps-grid,
+    .service-cards,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-card, .blog-post-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    /* Testimonial container now flows */
+    .testimonial-container {
+        flex-direction: column;
+    }
+
+    /* Why Choose Us & FAQ */
+    .why-us .reasons, .faq-items {
+        text-align: center;
+    }
+    .why-us li {
+        font-size: 16px;
+    }
+    .faq-item h3 {
+        font-size: 1.2em;
+    }
+    .faq-item p {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 769px) {
+    .testimonial-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        justify-content: center;
+    }
+	}9em;
     color: #666;
     padding: 0 20px;
     margin-bottom: 15px;
@@ -1111,4 +1293,5 @@ footer a:hover {
     padding: 10px 20px;
   }
 	    }
+
 
