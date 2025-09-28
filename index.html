@@ -47,9 +47,10 @@
         <li><a href="#contact" aria-label="Contact Brilla NG">Contact</a></li>
         <li><a href="/blog/" aria-label="Brilla NG Blog">Blog</a></li>
       </ul>
+      <!-- Mobile "Book Now" button, displayed inside hamburger menu -->
       <a href="#contact" class="cta-button-2" aria-label="Book a cleaning with Brilla NG">Book Now</a>
     </nav>
-    <a href="#contact" class="cta-button" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    <!-- Desktop "Book Now" button, removed from header for new mobile-first strategy -->
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
   </header>  
 
@@ -84,7 +85,7 @@
                     <p>Book your preferred date and time, or simply give us a call.</p>
                 </div>
                 <div class="step-item">
-                    <div class="step-icon"><i class="fas fa-sparkles"></i></div>
+                    <div class="step-icon"><i class="fas fa-magic"></i></div> <!-- Changed to a more direct "magic/spotless" icon -->
                     <h3>3. Enjoy a Spotless Space</h3>
                     <p>Our professional team ensures your space is impeccably clean.</p>
                 </div>
@@ -92,7 +93,7 @@
         </div>
     </section>
     
-    <section id="about" class="about section-padding"> <!-- Re-added About Section -->
+    <section id="about" class="about section-padding">
       <div class="container">
           <div class="about-content">
               <h2>About Brillá.ng</h2>
@@ -107,19 +108,19 @@
           <h2>Our Cleaning Services</h2>
           <div class="service-cards">
               <div class="service-card">
-                  <img src="images/service-1.jpg" alt="Home Cleaning - Professional cleaning for your residence" loading="lazy" />
+                  <img src="images/service-1.jpg" alt="Home Cleaning - Professional cleaning for your residence" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Home+Cleaning';"/>
                   <h3>Home Cleaning</h3>
                   <p>We keep your home fresh, tidy, and spotless.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Home Cleaning')" aria-label="Book Home Cleaning with Brilla NG">Book Home Cleaning</a>
               </div>
               <div class="service-card">
-                  <img src="images/service-2.jpg" alt="Office Cleaning - Maintain a clean workspace for productivity" loading="lazy" />
+                  <img src="images/service-2.jpg" alt="Office Cleaning - Maintain a clean workspace for productivity" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Office+Cleaning';"/>
                   <h3>Office Cleaning</h3>
                   <p>Maintain a clean and productive work environment.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Office Cleaning')" aria-label="Book Office Cleaning with Brilla NG">Book Office Cleaning</a>
               </div>
               <div class="service-card">
-                  <img src="images/service-3.jpg" alt="Post-Construction Cleaning - Expert cleanup after renovations" loading="lazy" />
+                  <img src="images/service-3.jpg" alt="Post-Construction Cleaning - Expert cleanup after renovations" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Post-Construction';"/>
                   <h3>Post-Construction Cleaning</h3>
                   <p>Transform your new space into a dust-free, livable area.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Post-Construction Cleaning')" aria-label="Book Post-Construction Cleaning with Brilla NG">Book Post-Construction</a>
@@ -143,12 +144,12 @@
           <h2>What Our Clients Say</h2>
           <div class="testimonial-container">
               <div class="testimonial">
-                  <img src="images/testimonial-1.jpg" alt="Client Tolu A." loading="lazy" />
+                  <img src="images/testimonial-1.jpg" alt="Client Tolu A." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Client';" />
                   <p>"Brillá.ng left my home sparkling! Highly recommended."</p>
                   <h4>- Tolu A.</h4>
               </div>
               <div class="testimonial">
-                  <img src="images/testimonial-2.jpg" alt="Client Chinedu O." loading="lazy" />
+                  <img src="images/testimonial-2.jpg" alt="Client Chinedu O." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Client';" />
                   <p>"Exceptional service! My office has never looked this clean."</p>
                   <h4>- Chinedu O.</h4>
               </div>
@@ -211,19 +212,19 @@
             <h2>Latest from Our Blog</h2>
             <div class="blog-grid">
                 <div class="blog-post-card">
-                    <img src="images/blog-1.jpg" alt="Featured blog post image: How to Choose a Cleaning Service" loading="lazy">
+                    <img src="images/blog-1.jpg" alt="Featured blog post image: How to Choose a Cleaning Service" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
                     <h3><a href="/blog/how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service for Your Needs</a></h3>
                     <p>Finding the perfect cleaning service can be daunting. Here are key factors to consider.</p>
                     <a href="/blog/how-to-choose-cleaning-service.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <img src="images/blog-2.jpg" alt="Featured blog post image: Affordable Cleaning in Lagos" loading="lazy">
+                    <img src="images/blog-2.jpg" alt="Featured blog post image: Affordable Cleaning in Lagos" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
                     <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Cleaning Services in Lagos: Quality You Can Trust</a></h3>
                     <p>Discover how Brilla.ng offers top-tier cleaning solutions at competitive prices in Lagos.</p>
                     <a href="/blog/affordable-cleaning-lagos.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <img src="images/blog-3.jpg" alt="Featured blog post image: Post-Construction Cleaning Checklist" loading="lazy">
+                    <img src="images/blog-3.jpg" alt="Featured blog post image: Post-Construction Cleaning Checklist" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
                     <h3><a href="/blog/post-construction-checklist.html">Your Ultimate Post-Construction Cleaning Checklist</a></h3>
                     <p>Ensure your newly renovated space is spotless and ready for occupancy with our comprehensive guide.</p>
                     <a href="/blog/post-construction-checklist.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
