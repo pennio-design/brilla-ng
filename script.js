@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", function () {
             navLinks.classList.toggle("active");
+            // Also toggle the visibility of the mobile Book Now button
+            const mobileCta = navLinks.querySelector('.cta-button-2');
+            if (mobileCta) {
+                mobileCta.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
+            }
+
             menuToggle.classList.toggle("active");
 
             if (menuIcon.classList.contains("fa-bars")) {
@@ -18,6 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".nav-links a").forEach(link => {
             link.addEventListener("click", function () {
                 navLinks.classList.remove("active");
+                // Hide mobile Book Now button when a link is clicked
+                const mobileCta = navLinks.querySelector('.cta-button-2');
+                if (mobileCta) {
+                    mobileCta.style.display = 'none';
+                }
                 menuToggle.classList.remove("active");
                 menuIcon.classList.replace("fa-times", "fa-bars");
             });
@@ -32,8 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+                    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset;
+
                     window.scrollTo({
-                        top: target.offsetTop - (document.querySelector('header')?.offsetHeight || 0), // Adjust for fixed header height
+                        top: offsetPosition,
                         behavior: "smooth"
                     });
                 }
@@ -47,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showTestimonial() {
         if (testimonials.length === 0) return; // Prevent error if no testimonials
         testimonials.forEach(t => t.style.display = "none");
-        testimonials[index].style.display = "block";
+        testimonials[index].style.display = "flex"; // Changed to flex to maintain internal layout
         index = (index + 1) % testimonials.length;
     }
 
