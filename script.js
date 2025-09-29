@@ -6,12 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", function () {
             navLinks.classList.toggle("active");
-            // Also toggle the visibility of the mobile Book Now button
-            const mobileCta = navLinks.querySelector('.cta-button-2');
-            if (mobileCta) {
-                mobileCta.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
-            }
-
+            // No need to manually toggle display of cta-button-2 here, CSS handles it
             menuToggle.classList.toggle("active");
 
             if (menuIcon.classList.contains("fa-bars")) {
@@ -24,11 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".nav-links a").forEach(link => {
             link.addEventListener("click", function () {
                 navLinks.classList.remove("active");
-                // Hide mobile Book Now button when a link is clicked
-                const mobileCta = navLinks.querySelector('.cta-button-2');
-                if (mobileCta) {
-                    mobileCta.style.display = 'none';
-                }
+                // No need to manually toggle display of cta-button-2 here, CSS handles it
                 menuToggle.classList.remove("active");
                 menuIcon.classList.replace("fa-times", "fa-bars");
             });
