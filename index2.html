@@ -39,8 +39,8 @@
   <style>
     /* --- CSS (Inline for Preview Functionality) --- */
     :root {
-      --primary-color: #00a8e8; /* Brilla Bright Blue */
-      --secondary-color: #0077b6; /* Brilla Deep Blue */
+      --primary-color: #4169e1; /* Royal Blue */
+      --secondary-color: #002366; /* Deep Navy Blue for text/headings */
       --accent-color: #ffd166; /* Sunny Yellow */
       --text-dark: #333333;
       --text-light: #666666;
@@ -59,7 +59,8 @@
     img { max-width: 100%; height: auto; display: block; }
 
     .section-padding { padding: 80px 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    /* Improved Margins: Increased max-width and kept padding */
+    .container { max-width: 1250px; margin: 0 auto; padding: 0 25px; }
 
     /* Buttons */
     .cta-button, .cta-button-2 {
@@ -73,6 +74,7 @@
       border: 2px solid var(--primary-color);
       text-align: center;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .cta-button:hover, .cta-button-2:hover {
@@ -83,7 +85,7 @@
 
     /* --- Header & Navigation --- */
     header {
-      background: var(--primary-color); /* RESTORED: Blue Header */
+      background: var(--primary-color); /* Royal Blue Header */
       height: var(--nav-height);
       display: flex;
       align-items: center;
@@ -97,26 +99,31 @@
 
     .logo img { 
       height: 50px; 
-      /* No filter needed for white logo on blue background */
+      width: auto; /* Preserve aspect ratio */
     }
-    /* Fallback text color if logo image is missing */
     .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--white); }
 
-    .nav-links ul { display: flex; gap: 30px; }
+    .nav-links ul { display: flex; gap: 25px; align-items: center; }
     .nav-links a { 
       font-weight: 500; 
-      color: var(--white); /* White links on Blue header */
+      color: var(--white); 
       transition: var(--transition); 
       font-size: 0.95rem; 
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--accent-color); }
 
+    /* Button Visibility Logic */
+    /* Mobile button hidden on desktop */
+    .cta-button-2 { display: none; }
+    
     /* Desktop Header Button */
     .header-cta-desktop { 
       margin-left: 20px;
-      background-color: var(--white); /* White button */
-      color: var(--primary-color);    /* Blue text */
+      background-color: var(--white); 
+      color: var(--primary-color);    
       border-color: var(--white);
+      display: inline-block;
     }
     
     .header-cta-desktop:hover {
@@ -128,7 +135,7 @@
     .menu-toggle { 
       display: none; 
       font-size: 1.5rem; 
-      color: var(--white); /* White hamburger menu */
+      color: var(--white); 
       cursor: pointer; 
     }
 
@@ -162,8 +169,8 @@
 
     /* --- Hero Section --- */
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg'); 
-      background-color: #333; 
+      /* Added solid fallback color for immediate blue while image loads */
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg'), var(--secondary-color);
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -185,6 +192,12 @@
       background-color: var(--primary-color);
       border-color: var(--primary-color);
     }
+    
+    .hero-cta-primary:hover {
+        background-color: transparent;
+        color: var(--white);
+        border-color: var(--white);
+    }
 
     .hero-cta-secondary { background-color: transparent; border-color: var(--white); }
     .hero-cta-secondary:hover { background-color: var(--white); color: var(--primary-color); }
@@ -192,12 +205,23 @@
     .trust-text { font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
     .trust-text i { color: var(--accent-color); }
 
-    /* --- Sections --- */
+    /* --- Sections & Cards (Flexbox for Centering) --- */
     .how-it-works, .about, .services, .why-us, .testimonials, .faq-section, .contact, .blog-highlights-section, .instagram-reels { text-align: center; }
     h2 { margin-bottom: 50px; font-size: 2.2rem; color: var(--secondary-color); text-align: center; }
     
-    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .step-item { padding: 30px; }
+    /* Using Flexbox instead of Grid to center orphan cards */
+    .steps-grid, .service-cards, .testimonial-container, .reels-grid, .blog-grid, .faq-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .step-item { 
+      padding: 30px; 
+      flex: 1 1 250px; /* Grow, Shrink, Basis */
+      max-width: 350px;
+    }
     .step-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
     .step-item h3 { margin-bottom: 15px; font-size: 1.3rem; }
 
@@ -205,8 +229,16 @@
     .about-content { max-width: 800px; margin: 0 auto; }
     .about p { margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light); }
 
-    .service-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-    .service-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); width: 350px; display: flex; flex-direction: column; }
+    .service-card { 
+      background: var(--white); 
+      border-radius: 10px; 
+      overflow: hidden; 
+      box-shadow: var(--shadow); 
+      transition: var(--transition); 
+      width: 350px; 
+      display: flex; 
+      flex-direction: column; 
+    }
     .service-card:hover { transform: translateY(-10px); }
     .service-card img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
     .service-card h3 { padding: 20px 20px 10px; font-size: 1.3rem; }
@@ -219,19 +251,20 @@
     .reasons li { font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
     .reasons i { color: var(--accent-color); }
 
-    .testimonial-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px; }
-    .testimonial { background: var(--light-bg); padding: 30px; border-radius: 10px; max-width: 500px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .testimonial { 
+      background: var(--light-bg); 
+      padding: 30px; 
+      border-radius: 10px; 
+      max-width: 500px; 
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+    }
     .testimonial img { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; object-fit: cover; background-color: #ddd; }
     .testimonial p { font-style: italic; margin-bottom: 15px; }
     
     /* --- Instagram Reels Section --- */
     .instagram-reels.bg-light { background-color: var(--light-bg); }
-    .reels-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      justify-items: center;
-    }
+    
     .reel-card {
       background: var(--white);
       padding: 10px;
@@ -254,8 +287,21 @@
     }
 
     .faq-section { background-color: var(--white); } 
-    .faq-items { max-width: 800px; margin: 0 auto; text-align: left; }
-    .faq-item { background: var(--light-bg); padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    /* FAQ items stack vertically, not a grid, but flex column handles responsiveness nicely */
+    .faq-items { 
+        flex-direction: column; 
+        max-width: 800px; 
+        margin: 0 auto; 
+        width: 100%;
+    }
+    .faq-item { 
+        background: var(--light-bg); 
+        padding: 20px; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+        text-align: left;
+        width: 100%;
+    }
     .faq-item h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary-color); }
 
     .contact-form { max-width: 600px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
@@ -264,12 +310,19 @@
     .contact-form button { background-color: var(--primary-color); color: var(--white); border: none; padding: 15px; font-size: 1.1rem; font-weight: 600; border-radius: 5px; cursor: pointer; transition: var(--transition); }
     .contact-form button:hover { background-color: var(--secondary-color); }
 
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .blog-post-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+    .blog-post-card { 
+        background: var(--white); 
+        border-radius: 10px; 
+        overflow: hidden; 
+        box-shadow: var(--shadow); 
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
     .blog-post-card img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
     .blog-post-card h3 { padding: 20px 20px 10px; font-size: 1.2rem; }
     .blog-post-card h3 a { text-decoration: none; color: var(--text-dark); }
-    .blog-post-card p { padding: 0 20px 20px; color: var(--text-light); font-size: 0.95rem; }
+    .blog-post-card p { padding: 0 20px 20px; color: var(--text-light); font-size: 0.95rem; flex-grow: 1; }
     .read-more { display: inline-block; margin: 0 20px 20px; color: var(--primary-color); font-weight: 600; }
 
     .social-icons { background: var(--primary-color); padding: 30px 0; }
@@ -290,7 +343,7 @@
         left: -100%; 
         width: 100%; 
         height: calc(100vh - var(--nav-height)); 
-        background: var(--primary-color); /* Blue Mobile Menu */
+        background: var(--primary-color); 
         flex-direction: column; 
         align-items: center; 
         justify-content: center; 
@@ -298,9 +351,9 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
       }
       .nav-links.active { left: 0; }
-      .nav-links ul { flex-direction: column; text-align: center; width: 100%; padding: 20px 0; }
-      .nav-links li { margin: 15px 0; }
+      .nav-links ul { flex-direction: column; text-align: center; width: 100%; padding: 20px 0; gap: 20px; }
       
+      /* Mobile Button Visible */
       .cta-button-2 { 
         display: inline-block; 
         margin-top: 20px;
@@ -308,7 +361,9 @@
         color: var(--primary-color); 
       }
 
+      /* Desktop Button Hidden */
       .header-cta-desktop { display: none; }
+      
       .reasons { flex-direction: column; align-items: flex-start; padding-left: 20px; }
     }
   </style>
@@ -323,25 +378,26 @@
   <header>
     <a href="#" aria-label="Brilla NG Homepage">
       <div class="logo">
-        <!-- Reverted to local link with basic error handling (hides image on fail) to improve speed -->
-        <img src="images/logo.png" alt="Brillá.ng Logo" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>Brillá.ng</span>'"/>
+        <img src="images/logo.png" alt="Brillá.ng Logo" width="150" height="50" loading="eager" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>Brillá.ng</span>'"/>
       </div>
     </a>
     
     <nav class="nav-links" id="nav-links">
       <ul>
+        <!-- Simplified Links -->
         <li><a href="#about" aria-label="About Brilla NG">About</a></li>
-        <li><a href="#how-it-works" aria-label="How Brilla NG Works">How It Works</a></li>
-        <li><a href="#services" aria-label="Brilla NG Services">Our Services</a></li>
-        <li><a href="#testimonials" aria-label="Client Testimonials">Testimonials</a></li>
-        <li><a href="#faq" aria-label="Frequently Asked Questions">FAQ</a></li>
-        <li><a href="#contact" aria-label="Contact Brilla NG">Contact</a></li>
+        <li><a href="#services" aria-label="Brilla NG Services">Services</a></li>
+        <li><a href="#testimonials" aria-label="Client Testimonials">Reviews</a></li>
         <li><a href="/blog/" aria-label="Brilla NG Blog">Blog</a></li>
+        <li><a href="#contact" aria-label="Contact Brilla NG">Contact</a></li>
       </ul>
+      <!-- Mobile "Book Now" (Hidden on Desktop) -->
       <a href="#contact" class="cta-button-2" aria-label="Book a cleaning with Brilla NG" onclick="closeMenu()">Book Now</a>
     </nav>
     
+    <!-- Desktop "Book Now" (Hidden on Mobile) -->
     <a href="#contact" class="cta-button header-cta-desktop" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    
     <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
   </header>  
 
@@ -593,6 +649,7 @@
     <a href="https://facebook.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="https://twitter.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
     <a href="https://instagram.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://wa.me/2348146228911" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
   
   <footer>
