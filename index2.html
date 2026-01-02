@@ -61,6 +61,7 @@
     .section-padding { padding: 80px 0; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+    /* Buttons */
     .cta-button, .cta-button-2 {
       display: inline-block;
       padding: 12px 30px;
@@ -82,7 +83,7 @@
 
     /* --- Header & Navigation --- */
     header {
-      background: var(--white); /* Restored to White */
+      background: var(--primary-color); /* RESTORED: Blue Header */
       height: var(--nav-height);
       display: flex;
       align-items: center;
@@ -96,41 +97,42 @@
 
     .logo img { 
       height: 50px; 
-      /* CSS Filter to turn white logo to Primary Blue (#00a8e8) so it is visible on white header */
-      filter: invert(53%) sepia(63%) saturate(3065%) hue-rotate(164deg) brightness(95%) contrast(101%);
+      /* No filter needed for white logo on blue background */
     }
-    .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+    /* Fallback text color if logo image is missing */
+    .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--white); }
 
     .nav-links ul { display: flex; gap: 30px; }
     .nav-links a { 
       font-weight: 500; 
-      color: var(--text-dark); /* Restored to Dark Text */
+      color: var(--white); /* White links on Blue header */
       transition: var(--transition); 
       font-size: 0.95rem; 
     }
-    .nav-links a:hover { color: var(--primary-color); }
+    .nav-links a:hover { color: var(--accent-color); }
 
     /* Desktop Header Button */
     .header-cta-desktop { 
       margin-left: 20px;
-      background-color: var(--primary-color);
-      color: var(--white);
-      border-color: var(--primary-color);
+      background-color: var(--white); /* White button */
+      color: var(--primary-color);    /* Blue text */
+      border-color: var(--white);
     }
     
     .header-cta-desktop:hover {
       background-color: transparent;
-      color: var(--primary-color);
+      color: var(--white);
+      border-color: var(--white);
     }
 
     .menu-toggle { 
       display: none; 
       font-size: 1.5rem; 
-      color: var(--text-dark); /* Toggle icon to dark */
+      color: var(--white); /* White hamburger menu */
       cursor: pointer; 
     }
 
-    /* --- Floating WhatsApp Button (Floating Bottom) --- */
+    /* --- Floating WhatsApp Button --- */
     .whatsapp-float {
         position: fixed;
         width: 60px;
@@ -155,10 +157,8 @@
         transform: scale(1.1);
         color: #FFF;
     }
-
-    .whatsapp-float i {
-        margin-top: 2px; /* Visual adjustment for FontAwesome icon center */
-    }
+    
+    .whatsapp-float i { margin-top: 2px; }
 
     /* --- Hero Section --- */
     .hero {
@@ -208,7 +208,7 @@
     .service-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
     .service-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); width: 350px; display: flex; flex-direction: column; }
     .service-card:hover { transform: translateY(-10px); }
-    .service-card img { width: 100%; height: 200px; object-fit: cover; }
+    .service-card img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
     .service-card h3 { padding: 20px 20px 10px; font-size: 1.3rem; }
     .service-card p { padding: 0 20px 20px; color: var(--text-light); flex-grow: 1; }
     .service-cta { margin: 0 20px 20px; text-align: center; }
@@ -221,7 +221,7 @@
 
     .testimonial-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px; }
     .testimonial { background: var(--light-bg); padding: 30px; border-radius: 10px; max-width: 500px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .testimonial img { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; object-fit: cover; }
+    .testimonial img { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; object-fit: cover; background-color: #ddd; }
     .testimonial p { font-style: italic; margin-bottom: 15px; }
     
     /* --- Instagram Reels Section --- */
@@ -266,7 +266,7 @@
 
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
     .blog-post-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
-    .blog-post-card img { width: 100%; height: 200px; object-fit: cover; }
+    .blog-post-card img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
     .blog-post-card h3 { padding: 20px 20px 10px; font-size: 1.2rem; }
     .blog-post-card h3 a { text-decoration: none; color: var(--text-dark); }
     .blog-post-card p { padding: 0 20px 20px; color: var(--text-light); font-size: 0.95rem; }
@@ -290,7 +290,7 @@
         left: -100%; 
         width: 100%; 
         height: calc(100vh - var(--nav-height)); 
-        background: var(--white); /* White background on mobile menu */
+        background: var(--primary-color); /* Blue Mobile Menu */
         flex-direction: column; 
         align-items: center; 
         justify-content: center; 
@@ -303,7 +303,9 @@
       
       .cta-button-2 { 
         display: inline-block; 
-        margin-top: 20px; 
+        margin-top: 20px;
+        background-color: var(--white);
+        color: var(--primary-color); 
       }
 
       .header-cta-desktop { display: none; }
@@ -321,6 +323,7 @@
   <header>
     <a href="#" aria-label="Brilla NG Homepage">
       <div class="logo">
+        <!-- Reverted to local link with basic error handling (hides image on fail) to improve speed -->
         <img src="images/logo.png" alt="Brillá.ng Logo" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>Brillá.ng</span>'"/>
       </div>
     </a>
@@ -396,19 +399,19 @@
           <h2>Our Cleaning Services</h2>
           <div class="service-cards">
               <div class="service-card">
-                  <img src="images/service-1.jpg" alt="Home Cleaning - Professional cleaning for your residence" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Home+Cleaning';"/>
+                  <img src="images/service-1.jpg" alt="Home Cleaning" loading="lazy" />
                   <h3>Home Cleaning</h3>
                   <p>We keep your home fresh, tidy, and spotless.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Home Cleaning')" aria-label="Book Home Cleaning with Brilla NG">Book Home Cleaning</a>
               </div>
               <div class="service-card">
-                  <img src="images/service-2.jpg" alt="Office Cleaning - Maintain a clean workspace for productivity" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Office+Cleaning';"/>
+                  <img src="images/service-2.jpg" alt="Office Cleaning" loading="lazy" />
                   <h3>Office Cleaning</h3>
                   <p>Maintain a clean and productive work environment.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Office Cleaning')" aria-label="Book Office Cleaning with Brilla NG">Book Office Cleaning</a>
               </div>
               <div class="service-card">
-                  <img src="images/service-3.jpg" alt="Post-Construction Cleaning - Expert cleanup after renovations" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Post-Construction';"/>
+                  <img src="images/service-3.jpg" alt="Post-Construction Cleaning" loading="lazy" />
                   <h3>Post-Construction Cleaning</h3>
                   <p>Transform your new space into a dust-free, livable area.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Post-Construction Cleaning')" aria-label="Book Post-Construction Cleaning with Brilla NG">Book Post-Construction</a>
@@ -433,12 +436,12 @@
           <h2>What Our Clients Say</h2>
           <div class="testimonial-container">
               <div class="testimonial">
-                  <img src="images/testimonial-1.jpg" alt="Client Tolu A." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Client';" />
+                  <img src="images/testimonial-1.jpg" alt="Client Tolu A." loading="lazy" />
                   <p>"Brillá.ng left my home sparkling! Highly recommended."</p>
                   <h4>- Tolu A.</h4>
               </div>
               <div class="testimonial">
-                  <img src="images/testimonial-2.jpg" alt="Client Chinedu O." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Client';" />
+                  <img src="images/testimonial-2.jpg" alt="Client Chinedu O." loading="lazy" />
                   <p>"Exceptional service! My office has never looked this clean."</p>
                   <h4>- Chinedu O.</h4>
               </div>
@@ -563,19 +566,19 @@
             <h2>Latest from Our Blog</h2>
             <div class="blog-grid">
                 <div class="blog-post-card">
-                    <img src="images/blog-1.jpeg" alt="Featured blog post image: How to Choose a Cleaning Service" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
+                    <img src="images/blog-1.jpeg" alt="Featured blog post image: How to Choose a Cleaning Service" loading="lazy" />
                     <h3><a href="/blog/how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service for Your Needs</a></h3>
                     <p>Finding the perfect cleaning service can be daunting. Here are key factors to consider.</p>
                     <a href="/blog/how-to-choose-cleaning-service.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <img src="images/blog-2.jpeg" alt="Featured blog post image: Affordable Cleaning in Lagos" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
+                    <img src="images/blog-2.jpeg" alt="Featured blog post image: Affordable Cleaning in Lagos" loading="lazy" />
                     <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Cleaning Services in Lagos: Quality You Can Trust</a></h3>
                     <p>Discover how Brilla.ng offers top-tier cleaning solutions at competitive prices in Lagos.</p>
                     <a href="/blog/affordable-cleaning-lagos.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <img src="images/blog-3.jpeg" alt="Featured blog post image: Post-Construction Cleaning Checklist" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
+                    <img src="images/blog-3.jpeg" alt="Featured blog post image: Post-Construction Cleaning Checklist" loading="lazy" />
                     <h3><a href="/blog/post-construction-checklist.html">Your Ultimate Post-Construction Cleaning Checklist</a></h3>
                     <p>Ensure your newly renovated space is spotless and ready for occupancy with our comprehensive guide.</p>
                     <a href="/blog/post-construction-checklist.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
