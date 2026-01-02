@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brilla NG offers professional home and office cleaning services across Lagos, Nigeria. Discover why homes and businesses trust Brillá.ng to shine beyond clean." />
+  <meta name="keywords" content="cleaning services, home cleaning, office cleaning, post-construction cleaning, professional cleaners, Brillá.ng, Brilla NG, Brilla" />
+  <meta name="author" content="Brillá.ng" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://brilla.ng/" />
+  <title>Brilla NG - Professional Cleaning Services in Lagos | Brillá.ng</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Brilla NG",
+    "url": "https://brilla.ng",
+    "logo": "https://brilla.ng/images/logo.png",
+    "description": "Professional home and office cleaning services in Nigeria",
+    "telephone": "+2348146228911",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NG"
+    }
+  }
+  </script>
+
+  <style>
+    /* --- GENERAL RESET --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+        font-variant-ligatures: none;
+    }
+
+    body {
+        background-color: #F8F9FA;
+        color: #333;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+    /* --- LAYOUT UTILITIES --- */
+    .main-wrapper {
+        padding-top: 70px; /* Offset for fixed header */
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .section-padding {
+        padding: 80px 0;
+    }
+
+    .bg-light {
+        background-color: #e3f2fd;
+    }
+
+    /* --- TYPOGRAPHY --- */
+    h1, h2, h3 {
+        color: #004085;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    h1 { font-size: 2.8em; }
+    h2 { font-size: 2.2em; }
+    h3 { font-size: 1.8em; }
+
+    p {
+        margin-bottom: 15px;
+        color: #666;
+    }
+
+    /* --- HEADER & NAVIGATION --- */
+    header {
+        background-color: #004085;
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo img {
+        height: 40px;
+        width: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s ease;
+        font-weight: 500;
+    }
+
+    .nav-links a:hover {
+        color: #FFC107;
+    }
+
+    /* --- CTA BUTTONS --- */
+    .cta-button, .cta-button-2 {
+        display: inline-block;
+        padding: 10px 25px;
+        background: #FFC107;
+        color: #004085;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .cta-button:hover, .cta-button-2:hover {
+        background: #FFA000;
+        transform: translateY(-2px);
+    }
+
+    /* Header Specific CTAs */
+    .header-cta-desktop {
+        display: block;
+        margin-left: 25px;
+    }
+
+    .nav-links .cta-button-2 {
+        display: none; /* Hidden on desktop inside nav */
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/hero-bg.jpg') center/cover no-repeat;
+        background-color: #333; /* Fallback */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        min-height: 600px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        animation: fadeIn 1s ease-out;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .hero-content p {
+        font-size: 1.3em;
+        margin-bottom: 40px;
+        color: #f0f0f0;
+    }
+
+    .hero-ctas {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .hero-cta-primary {
+        min-width: 220px;
+    }
+
+    .hero-cta-secondary {
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+        min-width: 220px;
+    }
+
+    .hero-cta-secondary:hover {
+        background-color: #fff;
+        color: #004085;
+    }
+
+    .trust-text {
+        font-size: 0.9em;
+        color: #e0e0e0;
+        margin-top: 20px;
+    }
+
+    .trust-text i {
+        color: #FFC107;
+    }
+
+    /* --- HOW IT WORKS --- */
+    .how-it-works {
+        background: #fff;
+        text-align: center;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .step-item {
+        padding: 40px 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .step-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .step-icon {
+        font-size: 2.5em;
+        color: #004085;
+        margin-bottom: 20px;
+        background: #e3f2fd;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* --- SERVICES --- */
+    .services {
+        background: #fff;
+        text-align: center;
+    }
+
+    .service-cards {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .service-card {
+        background: white;
+        padding: 20px;
+        width: 320px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .service-card p {
+        flex-grow: 1;
+    }
+
+    /* --- TESTIMONIALS (Updated with Scroll Snap) --- */
+    .testimonials {
+        background: #e3f2fd;
+        text-align: center;
+        overflow: hidden; /* Contains the scroll area */
+    }
+
+    .testimonial-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .testimonial {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .testimonial img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        border: 3px solid #FFC107;
+    }
+
+    .testimonial p {
+        font-style: italic;
+        font-size: 1.1em;
+    }
+
+    /* --- INSTAGRAM FEED (NEW) --- */
+    .instagram-feed {
+        background: #fff;
+        text-align: center;
+    }
+
+    .instagram-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(326px, 1fr)); /* 326px min for IG embeds */
+        gap: 20px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .instagram-item {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* --- FAQ (Accordion Logic) --- */
+    .faq-items {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        text-align: left;
+    }
+
+    .faq-item h3 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+        cursor: pointer;
+        color: #004085;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .faq-item h3::after {
+        content: '\f078'; /* FontAwesome Chevron Down */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 0.8em;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.active h3::after {
+        transform: rotate(180deg);
+    }
+
+    .faq-item p {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease, margin 0.3s ease;
+        opacity: 0;
+        margin-top: 0;
+    }
+
+    .faq-item.active p {
+        max-height: 200px; /* Expands to show text */
+        opacity: 1;
+        margin-top: 15px;
+    }
+
+    /* --- CONTACT FORM --- */
+    .contact {
+        background: #004085;
+        color: white;
+        text-align: center;
+    }
+
+    .contact h2, .contact p {
+        color: white;
+    }
+
+    .contact-form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 450px;
+        margin: 30px auto 0;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .contact-form button {
+        padding: 12px;
+        background: #FFC107;
+        border: none;
+        color: #004085;
+        font-weight: bold;
+        font-size: 1.1em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .contact-form button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+
+    #loading-message {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* --- BLOG & FOOTER --- */
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .blog-post-card {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+    .blog-post-card:hover { transform: translateY(-5px); }
+
+    .blog-post-card img { width: 100%; height: 200px; object-fit: cover; }
+    .blog-post-card h3 { padding: 15px 20px 5px; font-size: 1.3em; }
+    .blog-post-card h3 a { color: #004085; text-decoration: none; }
+    .blog-post-card p { padding: 0 20px 15px; }
+    .blog-post-card .read-more { display: block; padding: 0 20px 20px; color: #004085; text-decoration: none; font-weight: bold; }
+
+    footer {
+        background: #212529;
+        color: #adb5bd;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    footer a { color: #FFC107; text-decoration: none; }
+
+    /* --- FLOATING SOCIAL ICONS --- */
+    .social-icons {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 990;
+    }
+
+    .social-icons a {
+        background: #004085;
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        transition: transform 0.3s;
+    }
+
+    .social-icons a:hover { transform: scale(1.1); }
+    .social-icons a.whatsapp { background: #25D366; }
+
+    /* --- ANIMATION --- */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- MOBILE RESPONSIVENESS --- */
+    @media (max-width: 768px) {
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        
+        /* Mobile Nav */
+        .menu-toggle { display: block; }
+        .header-cta-desktop { display: none; }
+        
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            flex-direction: column;
+            padding: 20px 0;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        .nav-links.active { display: flex; }
+        .nav-links ul { flex-direction: column; width: 100%; text-align: center; }
+        .nav-links a { display: block; padding: 10px 0; color: #333; }
+        .nav-links .cta-button-2 { display: block; margin: 15px auto; width: 80%; text-align: center; }
+
+        /* Floating Icons HIDDEN on mobile */
+        .social-icons { display: none; }
+
+        /* Testimonials Slider (Snap) */
+        .testimonial-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+            justify-content: flex-start;
+        }
+        .testimonial {
+            min-width: 85vw; /* Almost full width */
+            scroll-snap-align: center;
+            margin-right: 10px;
+        }
+
+        .hero-ctas { flex-direction: column; }
+        .hero-cta-primary, .hero-cta-secondary { width: 100%; }
+        
+        .contact-form { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" aria-label="Brilla NG Homepage">
+      <div class="logo">
+      <!-- Added onerror fallback for robustness -->
+      <img src="images/logo.png" alt="Brillá.ng Logo" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<h2 style=\'color:white; margin:0\'>Brillá.ng</h2>'"/>
+    </div>
+    </a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#about" aria-label="About Brilla NG">About</a></li>
+        <li><a href="#how-it-works" aria-label="How Brilla NG Works">How It Works</a></li>
+        <li><a href="#services" aria-label="Brilla NG Services">Our Services</a></li>
+        <li><a href="#testimonials" aria-label="Client Testimonials">Testimonials</a></li>
+        <li><a href="#faq" aria-label="Frequently Asked Questions">FAQ</a></li>
+        <li><a href="#contact" aria-label="Contact Brilla NG">Contact</a></li>
+        <li><a href="/blog/" aria-label="Brilla NG Blog">Blog</a></li>
+      </ul>
+      <a href="#contact" class="cta-button-2" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    </nav>
+    <a href="#contact" class="cta-button header-cta-desktop" aria-label="Book a cleaning with Brilla NG">Book Now</a>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  </header>  
+
+  <div class="main-wrapper"> 
+
+    <section class="hero section-padding">
+      <div class="container">
+          <div class="hero-content">
+              <h1>Reclaim Your Time, We'll Handle the Shine</h1>
+              <p>Professional residential & commercial cleaning in Lagos. Get peace of mind and a spotless environment, reliably and professionally.</p>
+              <div class="hero-ctas">
+                  <a href="#contact" class="cta-button hero-cta-primary" aria-label="Get a Free Home Cleaning Quote">Get a Free Quote</a>
+                  <a href="#contact" class="cta-button hero-cta-secondary" aria-label="Request Office Cleaning Service">Office Cleaning</a>
+              </div>
+              <p class="trust-text"><i class="fas fa-star"></i> Trusted by 100+ clients across Nigeria</p>
+          </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works section-padding">
+        <div class="container">
+            <h2>Our Simple 3-Step Process</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-hand-pointer"></i></div>
+                    <h3>1. Choose Service</h3>
+                    <p>Select the perfect cleaning package for your home or office.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>2. Schedule</h3>
+                    <p>Book your preferred date and time online or give us a call.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-sparkles"></i></div>
+                    <h3>3. Enjoy</h3>
+                    <p>Relax while our professional team makes your space sparkle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about section-padding bg-light">
+      <div class="container">
+          <div class="about-content">
+              <h2>About Brillá.ng</h2>
+              <p>Brillá.ng is a professional cleaning service dedicated to providing top-notch cleaning solutions for homes and businesses. We believe in excellence, reliability, and a cleaner, healthier environment for everyone.</p>
+              <a href="#services" class="cta-button" aria-label="View Our Cleaning Services">Our Services</a>
+          </div>
+      </div>
+    </section>
+    
+    <section id="services" class="services section-padding">
+      <div class="container">
+          <h2>Our Cleaning Services</h2>
+          <div class="service-cards">
+              <div class="service-card">
+                  <img src="images/service-1.jpg" alt="Home Cleaning" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Home+Cleaning';"/>
+                  <h3>Home Cleaning</h3>
+                  <p>Keep your home fresh, tidy, and spotless with our regular or deep cleaning.</p>
+                  <button class="cta-button service-cta" onclick="prefillService('Home Cleaning')" aria-label="Book Home Cleaning">Book Now</button>
+              </div>
+              <div class="service-card">
+                  <img src="images/service-2.jpg" alt="Office Cleaning" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Office+Cleaning';"/>
+                  <h3>Office Cleaning</h3>
+                  <p>Maintain a clean, productive work environment with our corporate solutions.</p>
+                  <button class="cta-button service-cta" onclick="prefillService('Office Cleaning')" aria-label="Book Office Cleaning">Book Now</button>
+              </div>
+              <div class="service-card">
+                  <img src="images/service-3.jpg" alt="Post-Construction Cleaning" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Post-Construction';"/>
+                  <h3>Post-Construction</h3>
+                  <p>Transform your new build or renovation into a dust-free, livable space.</p>
+                  <button class="cta-button service-cta" onclick="prefillService('Post-Construction Cleaning')" aria-label="Book Post-Construction">Book Now</button>
+              </div>
+          </div>
+      </div>
+    </section>  
+
+    <section id="testimonials" class="testimonials section-padding">
+      <div class="container">
+          <h2>What Our Clients Say</h2>
+          <div class="testimonial-container">
+              <div class="testimonial">
+                  <img src="images/testimonial-1.jpg" alt="Tolu A." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Tolu';"/>
+                  <p>"Brillá.ng left my home sparkling! The team was punctual and very professional. Highly recommended."</p>
+                  <h4>- Tolu A.</h4>
+              </div>
+              <div class="testimonial">
+                  <img src="images/testimonial-2.jpg" alt="Chinedu O." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Chinedu';"/>
+                  <p>"Exceptional service! My office has never looked this clean. The subscription plan is a lifesaver."</p>
+                  <h4>- Chinedu O.</h4>
+              </div>
+               <div class="testimonial">
+                  <img src="images/testimonial-3.jpg" alt="Sarah K." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Sarah';"/>
+                  <p>"I hired them for a post-construction clean up and was blown away. No dust left behind anywhere!"</p>
+                  <h4>- Sarah K.</h4>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- NEW INSTAGRAM SECTION -->
+    <section id="instagram-feed" class="instagram-feed section-padding bg-light">
+      <div class="container">
+          <h2>See Us in Action</h2>
+          <p class="section-subtitle">Watch our cleaning transformations on Instagram <a href="https://www.instagram.com/brilla.ng/" target="_blank" style="color:#004085; font-weight:bold;">@brilla.ng</a></p>
+          <div class="instagram-grid">
+              <!-- IG Embed 1 -->
+              <div class="instagram-item">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/brilla.ng/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+              </div>
+              <!-- IG Embed 2 -->
+              <div class="instagram-item">
+                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/brilla.ng/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+              </div>
+              <!-- IG Embed 3 -->
+               <div class="instagram-item">
+                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/brilla.ng/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
+              </div>
+          </div>
+          <script async src="//www.instagram.com/embed.js"></script>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section section-padding">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <h3>How do I book a cleaning service?</h3>
+                    <p>You can easily book online using the form below, or by calling us directly at +234 814 622 8911.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are your cleaners vetted?</h3>
+                    <p>Yes, all our cleaners undergo thorough background checks and rigorous training before joining our team.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need to provide supplies?</h3>
+                    <p>No, our team comes fully equipped with all necessary professional-grade cleaning supplies and equipment.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What areas do you cover?</h3>
+                    <p>We provide professional cleaning services across most major areas in Lagos. Contact us to confirm your specific location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+      <div class="container">
+          <h2>Book a Cleaning Today</h2>
+          <p>Let’s give your space the shine it deserves.</p>
+          <form id="contact-form" class="contact-form">
+              <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
+              <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
+              <input type="tel" name="phone" placeholder="Your Phone Number" required aria-label="Your Phone Number" />
+              <select name="service" id="service-select" required aria-label="Select a Service">
+                  <option value="">Select a Service</option>
+                  <option value="Home Cleaning">Home Cleaning</option>
+                  <option value="Office Cleaning">Office Cleaning</option>
+                  <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+              </select>
+              <textarea name="message" placeholder="Additional Details (Optional)" rows="4" aria-label="Additional Details"></textarea>
+              <button type="submit" id="submit-btn">Send Booking Request</button>
+              <p id="loading-message" style="display: none; color:white;"></p>
+          </form>
+          <br>
+          <h2>Or Call Us</h2>
+          <a href="tel:08146228911" class="cta-button" style="background:white; color:#004085; border:none;" aria-label="Call Brilla NG">Call 0814 622 8911</a>
+      </div>
+    </section>  
+
+    <section id="blog-highlights" class="blog-highlights-section section-padding bg-light">
+        <div class="container">
+            <h2>Latest from Our Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-post-card">
+                    <img src="images/blog-1.jpeg" alt="Blog 1" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+1';"/>
+                    <h3><a href="/blog/how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service</a></h3>
+                    <p>Finding the perfect cleaning service can be daunting. Here are key factors to consider.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-post-card">
+                    <img src="images/blog-2.jpeg" alt="Blog 2" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+2';"/>
+                    <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Cleaning in Lagos</a></h3>
+                    <p>Discover how Brilla.ng offers top-tier cleaning solutions at competitive prices.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-post-card">
+                    <img src="images/blog-3.jpeg" alt="Blog 3" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+3';"/>
+                    <h3><a href="/blog/post-construction-checklist.html">Post-Construction Checklist</a></h3>
+                    <p>Ensure your newly renovated space is spotless with our comprehensive guide.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </div> 
+
+  <!-- Social Icons (Hidden on Mobile via CSS) -->
+  <div class="social-icons">
+    <a href="https://facebook.com/brilla.ng" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://twitter.com/brilla.ng" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://instagram.com/brilla.ng" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://wa.me/2348146228911" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Brillá.ng. Shine Beyond Clean.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+
+  <script>
+    // --- 1. PREFILL SERVICE LOGIC ---
+    // Must be global to be accessed by onclick in HTML
+    function prefillService(serviceType) {
+        const select = document.getElementById("service-select");
+        if (select) {
+            select.value = serviceType;
+            // Visual feedback
+            select.style.border = "2px solid #FFC107";
+            setTimeout(() => select.style.border = "1px solid #ddd", 2000);
+            
+            // Scroll to contact
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+                const headerOffset = document.querySelector('header')?.offsetHeight || 70;
+                const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        
+        // --- 2. MOBILE MENU ---
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        const menuIcon = menuToggle ? menuToggle.querySelector("i") : null;
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+                if (menuIcon) {
+                    menuIcon.classList.toggle("fa-bars");
+                    menuIcon.classList.toggle("fa-times");
+                }
+            });
+
+            // Close menu on link click
+            document.querySelectorAll(".nav-links a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                    if (menuIcon) {
+                        menuIcon.classList.add("fa-bars");
+                        menuIcon.classList.remove("fa-times");
+                    }
+                });
+            });
+        }
+
+        // --- 3. SMOOTH SCROLL OFFSET ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                const href = this.getAttribute("href");
+                if (href.length > 1 && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerOffset = document.querySelector('header')?.offsetHeight || 70;
+                        const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                    }
+                }
+            });
+        });
+
+        // --- 4. FAQ ACCORDION ---
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // --- 5. AJAX FORM SUBMISSION ---
+        const contactForm = document.getElementById("contact-form");
+        const submitBtn = document.getElementById("submit-btn");
+        const loadingMessage = document.getElementById("loading-message");
+
+        if (contactForm) {
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Sending...";
+                if (loadingMessage) {
+                    loadingMessage.style.display = "block";
+                    loadingMessage.textContent = "Sending...";
+                    loadingMessage.style.color = "#fff";
+                }
+
+                const formData = new FormData(contactForm);
+
+                fetch("https://formsubmit.co/ajax/845520e20f2df2c9a137a0f66d27f7bb", {
+                    method: "POST",
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => response.ok ? response.json() : Promise.reject(response))
+                .then(() => {
+                    if (loadingMessage) {
+                        loadingMessage.textContent = "Booking sent successfully! We will call you shortly.";
+                        loadingMessage.style.color = "#FFC107";
+                    }
+                    contactForm.reset();
+                    submitBtn.innerText = "Send Booking Request";
+                    submitBtn.disabled = false;
+                    setTimeout(() => { if (loadingMessage) loadingMessage.style.display = "none"; }, 5000);
+                })
+                .catch(() => {
+                    if (loadingMessage) {
+                        loadingMessage.textContent = "Something went wrong. Please call us directly.";
+                        loadingMessage.style.color = "#ff6b6b";
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Send Booking Request";
+                });
+            });
+        }
+    });
+  </script>
+</body>
+</html>
