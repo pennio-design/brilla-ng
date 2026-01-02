@@ -39,8 +39,8 @@
   <style>
     /* --- CSS (Inline for Preview Functionality) --- */
     :root {
-      --primary-color: #00a8e8; /* Bright Blue */
-      --secondary-color: #0077b6; /* Darker Blue */
+      --primary-color: #00a8e8; /* Brilla Bright Blue */
+      --secondary-color: #0077b6; /* Brilla Deep Blue */
       --accent-color: #ffd166; /* Sunny Yellow */
       --text-dark: #333333;
       --text-light: #666666;
@@ -82,7 +82,7 @@
 
     /* --- Header & Navigation --- */
     header {
-      background: var(--white);
+      background: var(--white); /* Restored to White */
       height: var(--nav-height);
       display: flex;
       align-items: center;
@@ -94,20 +94,76 @@
       box-shadow: var(--shadow);
     }
 
-    .logo img { height: 50px; }
+    .logo img { 
+      height: 50px; 
+      /* CSS Filter to turn white logo to Primary Blue (#00a8e8) so it is visible on white header */
+      filter: invert(53%) sepia(63%) saturate(3065%) hue-rotate(164deg) brightness(95%) contrast(101%);
+    }
     .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
 
     .nav-links ul { display: flex; gap: 30px; }
-    .nav-links a { font-weight: 500; color: var(--text-dark); transition: var(--transition); font-size: 0.95rem; }
+    .nav-links a { 
+      font-weight: 500; 
+      color: var(--text-dark); /* Restored to Dark Text */
+      transition: var(--transition); 
+      font-size: 0.95rem; 
+    }
     .nav-links a:hover { color: var(--primary-color); }
 
-    .header-cta-desktop { margin-left: 20px; }
-    .menu-toggle { display: none; font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
+    /* Desktop Header Button */
+    .header-cta-desktop { 
+      margin-left: 20px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-color: var(--primary-color);
+    }
+    
+    .header-cta-desktop:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+    }
+
+    .menu-toggle { 
+      display: none; 
+      font-size: 1.5rem; 
+      color: var(--text-dark); /* Toggle icon to dark */
+      cursor: pointer; 
+    }
+
+    /* --- Floating WhatsApp Button (Floating Bottom) --- */
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+        color: #FFF;
+    }
+
+    .whatsapp-float i {
+        margin-top: 2px; /* Visual adjustment for FontAwesome icon center */
+    }
 
     /* --- Hero Section --- */
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg'); /* Reverted to local, ensure this image exists or add fallback in CSS */
-      background-color: #333; /* Fallback color */
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg'); 
+      background-color: #333; 
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -124,6 +180,12 @@
     .hero-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
     
     .hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+    
+    .hero-cta-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
     .hero-cta-secondary { background-color: transparent; border-color: var(--white); }
     .hero-cta-secondary:hover { background-color: var(--white); color: var(--primary-color); }
     
@@ -181,17 +243,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 400px; /* approximates Reel aspect ratio container */
+      min-height: 400px; 
     }
     .reel-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     }
     .instagram-media {
-        min-width: 326px !important; /* Forces Instagram embed minimum width */
+        min-width: 326px !important; 
     }
 
-    .faq-section { background-color: var(--white); } /* Changed to white to alternate with Reels section */
+    .faq-section { background-color: var(--white); } 
     .faq-items { max-width: 800px; margin: 0 auto; text-align: left; }
     .faq-item { background: var(--light-bg); padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .faq-item h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary-color); }
@@ -222,11 +284,28 @@
     @media (max-width: 768px) {
       .hero-content h1 { font-size: 2rem; }
       .menu-toggle { display: block; }
-      .nav-links { position: fixed; top: var(--nav-height); left: -100%; width: 100%; height: calc(100vh - var(--nav-height)); background: var(--white); flex-direction: column; align-items: center; justify-content: center; transition: 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+      .nav-links { 
+        position: fixed; 
+        top: var(--nav-height); 
+        left: -100%; 
+        width: 100%; 
+        height: calc(100vh - var(--nav-height)); 
+        background: var(--white); /* White background on mobile menu */
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        transition: 0.3s ease-in-out; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+      }
       .nav-links.active { left: 0; }
       .nav-links ul { flex-direction: column; text-align: center; width: 100%; padding: 20px 0; }
       .nav-links li { margin: 15px 0; }
-      .cta-button-2 { display: inline-block; margin-top: 20px; }
+      
+      .cta-button-2 { 
+        display: inline-block; 
+        margin-top: 20px; 
+      }
+
       .header-cta-desktop { display: none; }
       .reasons { flex-direction: column; align-items: flex-start; padding-left: 20px; }
     }
@@ -234,8 +313,12 @@
 </head>
 <body>
   
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/2348146228911" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
   <header>
-    <!-- FIX: Changed href="/" to "#" to work as "Top of Page" safely without reload -->
     <a href="#" aria-label="Brilla NG Homepage">
       <div class="logo">
         <img src="images/logo.png" alt="Brillá.ng Logo" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>Brillá.ng</span>'"/>
@@ -250,7 +333,6 @@
         <li><a href="#testimonials" aria-label="Client Testimonials">Testimonials</a></li>
         <li><a href="#faq" aria-label="Frequently Asked Questions">FAQ</a></li>
         <li><a href="#contact" aria-label="Contact Brilla NG">Contact</a></li>
-        <!-- Reverted to original local link -->
         <li><a href="/blog/" aria-label="Brilla NG Blog">Blog</a></li>
       </ul>
       <a href="#contact" class="cta-button-2" aria-label="Book a cleaning with Brilla NG" onclick="closeMenu()">Book Now</a>
@@ -314,21 +396,18 @@
           <h2>Our Cleaning Services</h2>
           <div class="service-cards">
               <div class="service-card">
-                  <!-- Reverted to original local image -->
                   <img src="images/service-1.jpg" alt="Home Cleaning - Professional cleaning for your residence" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Home+Cleaning';"/>
                   <h3>Home Cleaning</h3>
                   <p>We keep your home fresh, tidy, and spotless.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Home Cleaning')" aria-label="Book Home Cleaning with Brilla NG">Book Home Cleaning</a>
               </div>
               <div class="service-card">
-                  <!-- Reverted to original local image -->
                   <img src="images/service-2.jpg" alt="Office Cleaning - Maintain a clean workspace for productivity" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Office+Cleaning';"/>
                   <h3>Office Cleaning</h3>
                   <p>Maintain a clean and productive work environment.</p>
                   <a href="#contact" class="cta-button service-cta" onclick="prefillService('Office Cleaning')" aria-label="Book Office Cleaning with Brilla NG">Book Office Cleaning</a>
               </div>
               <div class="service-card">
-                  <!-- Reverted to original local image -->
                   <img src="images/service-3.jpg" alt="Post-Construction Cleaning - Expert cleanup after renovations" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Post-Construction';"/>
                   <h3>Post-Construction Cleaning</h3>
                   <p>Transform your new space into a dust-free, livable area.</p>
@@ -354,13 +433,11 @@
           <h2>What Our Clients Say</h2>
           <div class="testimonial-container">
               <div class="testimonial">
-                  <!-- Reverted to original local image -->
                   <img src="images/testimonial-1.jpg" alt="Client Tolu A." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Client';" />
                   <p>"Brillá.ng left my home sparkling! Highly recommended."</p>
                   <h4>- Tolu A.</h4>
               </div>
               <div class="testimonial">
-                  <!-- Reverted to original local image -->
                   <img src="images/testimonial-2.jpg" alt="Client Chinedu O." loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/80x80?text=Client';" />
                   <p>"Exceptional service! My office has never looked this clean."</p>
                   <h4>- Chinedu O.</h4>
@@ -370,74 +447,59 @@
       </div>
     </section>  
 
-    <!-- New Instagram Reels Section -->
+    <!-- Instagram Reels Section -->
     <section id="instagram-feed" class="instagram-reels section-padding bg-light">
       <div class="container">
         <h2>See Us in Action on Instagram</h2>
         <p style="margin-bottom: 30px; color: var(--text-light);">Check out our latest cleaning transformations @brilla.ng</p>
         <div class="reels-grid">
           
-          <!-- Reel 1: https://www.instagram.com/reel/DRPbUHBCBHB/ -->
+          <!-- Reel 1 -->
           <div class="reel-card">
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRPbUHBCBHB/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
               <div style="padding:16px;"> 
                 <a href="https://www.instagram.com/reel/DRPbUHBCBHB/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                  <div style=" display: flex; flex-direction: row; align-items: center;">
-                    <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                    <div style=" display: flex; flex-direction: row; align-items: center;">
+                        <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
+                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                          <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                          <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                        </div>
                     </div>
-                  </div>
-                  <div style="padding: 19% 0;"></div> 
-                  <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><i class="fa-brands fa-instagram" style="font-size: 50px; color: #E1306C;"></i></div>
-                  <div style="padding-top: 8px;"> 
-                    <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div>
-                  </div>
                 </a>
               </div>
             </blockquote>
           </div>
 
-          <!-- Reel 2: https://www.instagram.com/reel/DROvyg_iIZm/ -->
+          <!-- Reel 2 -->
           <div class="reel-card">
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DROvyg_iIZm/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
               <div style="padding:16px;"> 
                 <a href="https://www.instagram.com/reel/DROvyg_iIZm/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                  <div style=" display: flex; flex-direction: row; align-items: center;">
-                    <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                    <div style=" display: flex; flex-direction: row; align-items: center;">
+                        <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
+                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                          <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                          <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                        </div>
                     </div>
-                  </div>
-                  <div style="padding: 19% 0;"></div> 
-                  <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><i class="fa-brands fa-instagram" style="font-size: 50px; color: #E1306C;"></i></div>
-                  <div style="padding-top: 8px;"> 
-                    <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div>
-                  </div>
                 </a>
               </div>
             </blockquote>
           </div>
 
-          <!-- Reel 3: https://www.instagram.com/reel/DRFk9iVCFDN/ -->
+          <!-- Reel 3 -->
           <div class="reel-card">
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRFk9iVCFDN/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                <div style="padding:16px;"> 
                 <a href="https://www.instagram.com/reel/DRFk9iVCFDN/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                  <div style=" display: flex; flex-direction: row; align-items: center;">
-                    <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                    <div style=" display: flex; flex-direction: row; align-items: center;">
+                        <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div>
+                        <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                          <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                          <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
+                        </div>
                     </div>
-                  </div>
-                  <div style="padding: 19% 0;"></div> 
-                  <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><i class="fa-brands fa-instagram" style="font-size: 50px; color: #E1306C;"></i></div>
-                  <div style="padding-top: 8px;"> 
-                    <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div>
-                  </div>
                 </a>
               </div>
             </blockquote>
@@ -501,21 +563,18 @@
             <h2>Latest from Our Blog</h2>
             <div class="blog-grid">
                 <div class="blog-post-card">
-                    <!-- Reverted to original local image -->
                     <img src="images/blog-1.jpeg" alt="Featured blog post image: How to Choose a Cleaning Service" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
                     <h3><a href="/blog/how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service for Your Needs</a></h3>
                     <p>Finding the perfect cleaning service can be daunting. Here are key factors to consider.</p>
                     <a href="/blog/how-to-choose-cleaning-service.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <!-- Reverted to original local image -->
                     <img src="images/blog-2.jpeg" alt="Featured blog post image: Affordable Cleaning in Lagos" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
                     <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Cleaning Services in Lagos: Quality You Can Trust</a></h3>
                     <p>Discover how Brilla.ng offers top-tier cleaning solutions at competitive prices in Lagos.</p>
                     <a href="/blog/affordable-cleaning-lagos.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <!-- Reverted to original local image -->
                     <img src="images/blog-3.jpeg" alt="Featured blog post image: Post-Construction Cleaning Checklist" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Blog+Image';"/>
                     <h3><a href="/blog/post-construction-checklist.html">Your Ultimate Post-Construction Cleaning Checklist</a></h3>
                     <p>Ensure your newly renovated space is spotless and ready for occupancy with our comprehensive guide.</p>
@@ -531,12 +590,10 @@
     <a href="https://facebook.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="https://twitter.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
     <a href="https://instagram.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://wa.me/2348146228911" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
   
   <footer>
     <p>&copy; 2025 Brillá.ng. Shine Beyond Clean.</p>
-    <!-- Reverted to original local link -->
     <p><a href="/lagos-cleaning-services.html" aria-label="Lagos Cleaning Services page">Lagos Cleaning Services</a></p>
   </footer> 
 
