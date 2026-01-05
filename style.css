@@ -4,8 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
-    font-variant-ligatures: none;
+    font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -16,8 +15,7 @@ body {
 
 /* NEW: Main Wrapper */
 .main-wrapper {
-    /* Padding-top added here to offset fixed header without affecting individual sections */
-    padding-top: 70px; /* Default height of header is around 70px */
+    padding-top: 70px;
 }
 
 .container {
@@ -38,6 +36,10 @@ h1, h2, h3 {
     color: #004085; /* Primary blue for headings */
     margin-bottom: 20px;
     line-height: 1.2;
+}
+
+h2 {
+    margin-bottom: 50px !important;
 }
 
 h1 { font-size: 2.8em; }
@@ -169,7 +171,6 @@ header {
     font-size: 1.2em;
     margin-bottom: 40px;
     color: #e0e0e0;
-    padding: 0;
 }
 
 .hero-ctas {
@@ -261,7 +262,6 @@ header {
 .step-item p {
     font-size: 0.95em;
     color: #666;
-    padding: 0;
 }
 
 /* About Section */
@@ -588,6 +588,31 @@ header {
 .blog-post-card .read-more i {
     margin-left: 5px;
     font-size: 0.9em;
+}
+
+/* Instagram Reels Section */
+.instagram-reels-section {
+    background: #fff;
+    text-align: center;
+}
+
+.instagram-reels-section h2 {
+    margin-bottom: 40px;
+}
+
+.reels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+}
+
+.reels-grid .instagram-media {
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    min-width: unset !important;
 }
 
 
