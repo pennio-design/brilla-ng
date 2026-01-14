@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Brilla NG offers professional home and office cleaning services across Lagos, Nigeria. Discover why homes and businesses trust Brillá.ng to shine beyond clean." />
+  <meta name="description" content="Brilla NG - The invisible luxury of a perfectly clean space. Professional home and office cleaning services in Lagos." />
   <meta name="keywords" content="cleaning services, home cleaning, office cleaning, post-construction cleaning, professional cleaners, Brillá.ng, Brilla NG, Brilla" />
   <meta name="author" content="Brillá.ng" />
   <meta name="robots" content="index, follow" />
+  <!-- Removed absolute URL prefix as requested -->
   <link rel="canonical" href="https://brilla.ng/" />
-  <title>Brilla NG - Professional Cleaning Services in Lagos | Brillá.ng</title>
+  <title>Brilla NG | The Invisible Luxury of a Perfectly Clean Space</title>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   
-  <!-- Google Fonts -->
+  <!-- Typography System: Clash Display (Headings) & Inter (Body) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
 
   <!-- Structured Data -->
@@ -37,55 +40,85 @@
   </script>
 
   <style>
-    /* --- CSS (Inline for Preview Functionality) --- */
+    /* --- Visual Identity System V2: Modern Hospitality --- */
     :root {
-      --primary-color: #4169e1; /* Royal Blue */
-      --secondary-color: #002366; /* Deep Navy Blue for text/headings */
-      --accent-color: #ffd166; /* Sunny Yellow */
-      --text-dark: #333333;
-      --text-light: #666666;
-      --white: #ffffff;
-      --light-bg: #f8f9fa;
-      --nav-height: 80px;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
+      /* 02. Color System: "The Canvas" */
+      --canvas-white: #FAFAFA;    /* Primary Background (80% surface) */
+      --swiss-navy: #0F172A;      /* Text, Borders, Logos (Classic Authority) */
+      --accent-cerulean: #3B82F6; /* Buttons, Highlights (Fresh Air) */
+      --pure-white: #FFFFFF;      /* Cards, distinct sections */
+      --border-color: #E2E8F0;    /* Subtle borders instead of heavy shadows */
+      
+      --nav-height: 90px;         /* Slightly taller for 'Editorial' feel */
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Smoother, more 'luxury' ease */
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-dark); overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
+    
+    body { 
+      font-family: 'Inter', sans-serif; /* Body Typeface */
+      line-height: 1.7; 
+      color: var(--swiss-navy); 
+      background-color: var(--canvas-white);
+      overflow-x: hidden; 
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typography Overrides */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Clash Display', sans-serif; /* Headline Typeface */
+      font-weight: 600;
+      letter-spacing: -0.02em; /* Tighter tracking for modern look */
+      color: var(--swiss-navy);
+    }
+
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
     ul { list-style: none; }
     img { max-width: 100%; height: auto; display: block; }
 
-    .section-padding { padding: 80px 0; }
-    /* Improved Margins: Increased max-width and kept padding */
-    .container { max-width: 1250px; margin: 0 auto; padding: 0 25px; }
+    /* Layout & Spacing */
+    .section-padding { padding: 120px 0; } /* Increased whitespace for "Fresh Air" feel */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
 
-    /* Buttons */
+    /* Buttons: Cerulean Accent */
     .cta-button, .cta-button-2 {
       display: inline-block;
-      padding: 12px 30px;
-      background-color: var(--primary-color);
-      color: var(--white);
-      border-radius: 50px;
-      font-weight: 600;
+      padding: 16px 36px;
+      background-color: var(--accent-cerulean);
+      color: var(--pure-white);
+      border-radius: 4px; /* Slightly squarer for architectural feel */
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
       transition: var(--transition);
-      border: 2px solid var(--primary-color);
+      border: 1px solid var(--accent-cerulean);
       text-align: center;
       cursor: pointer;
       white-space: nowrap;
+      letter-spacing: 0.01em;
     }
 
     .cta-button:hover, .cta-button-2:hover {
       background-color: transparent;
-      color: var(--primary-color);
+      color: var(--accent-cerulean);
       transform: translateY(-2px);
+    }
+    
+    .cta-button.outline {
+        background-color: transparent;
+        color: var(--swiss-navy);
+        border-color: var(--swiss-navy);
+    }
+    
+    .cta-button.outline:hover {
+        background-color: var(--swiss-navy);
+        color: var(--pure-white);
     }
 
     /* --- Header & Navigation --- */
     header {
-      background: var(--primary-color); /* Royal Blue Header */
+      background: rgba(250, 250, 250, 0.95); /* Canvas White with slight transparency */
+      backdrop-filter: blur(10px);
       height: var(--nav-height);
       display: flex;
       align-items: center;
@@ -94,48 +127,64 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      box-shadow: var(--shadow);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .logo img { 
-      height: 50px; 
-      width: auto; /* Preserve aspect ratio */
+      height: 45px; 
+      width: auto; 
+      /* Filter to ensure logo matches Swiss Navy color concept if it's currently black/colored */
+      /* This approximates #0F172A */
+      filter: brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(1917%) hue-rotate(186deg) brightness(93%) contrast(96%);
     }
-    .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--white); }
+    .logo-text { font-family: 'Clash Display', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--swiss-navy); }
 
-    .nav-links ul { display: flex; gap: 25px; align-items: center; }
+    .nav-links ul { display: flex; gap: 40px; align-items: center; }
     .nav-links a { 
-      font-weight: 500; 
-      color: var(--white); 
-      transition: var(--transition); 
+      font-weight: 400; 
+      color: var(--swiss-navy); 
       font-size: 0.95rem; 
       white-space: nowrap;
+      position: relative;
     }
-    .nav-links a:hover { color: var(--accent-color); }
+    
+    /* Subtle underline animation for links */
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--accent-cerulean);
+        transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--accent-cerulean); }
+    .nav-links a:hover::after { width: 100%; }
 
     /* Button Visibility Logic */
-    /* Mobile button hidden on desktop */
-    .cta-button-2 { display: none; }
+    .cta-button-2 { display: none; } /* Mobile button hidden on desktop */
     
-    /* Desktop Header Button */
     .header-cta-desktop { 
       margin-left: 20px;
-      background-color: var(--white); 
-      color: var(--primary-color);    
-      border-color: var(--white);
+      /* Using the Accent color for the header button */
+      background-color: var(--accent-cerulean); 
+      color: var(--pure-white);    
+      border-color: var(--accent-cerulean);
       display: inline-block;
+      padding: 12px 28px;
     }
     
     .header-cta-desktop:hover {
-      background-color: transparent;
-      color: var(--white);
-      border-color: var(--white);
+      background-color: var(--swiss-navy);
+      border-color: var(--swiss-navy);
+      color: var(--pure-white);
     }
 
     .menu-toggle { 
       display: none; 
       font-size: 1.5rem; 
-      color: var(--white); 
+      color: var(--swiss-navy); 
       cursor: pointer; 
     }
 
@@ -146,130 +195,274 @@
         height: 60px;
         bottom: 40px;
         right: 40px;
-        background-color: #25d366;
+        background-color: #25d366; /* Staying consistent with WA Brand */
         color: #FFF;
-        border-radius: 50px;
+        border-radius: 50%;
         text-align: center;
         font-size: 30px;
-        box-shadow: 2px 2px 3px #999;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
+        transition: var(--transition);
     }
 
     .whatsapp-float:hover {
-        background-color: #128c7e;
-        transform: scale(1.1);
-        color: #FFF;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 25px rgba(0,0,0,0.15);
     }
-    
     .whatsapp-float i { margin-top: 2px; }
 
-    /* --- Hero Section --- */
+    /* --- Hero Section (High Key / Lived-in Minimalism) --- */
     .hero {
-      /* Added solid fallback color for immediate blue while image loads */
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg'), var(--secondary-color);
+      /* Bright, airy background instead of dark overlay */
+      background-color: var(--canvas-white);
+      /* Fallback image with a very light overlay */
+      background-image: linear-gradient(to right, rgba(250,250,250,0.95), rgba(250,250,250,0.4)), url('images/hero-bg.jpg');
       background-size: cover;
       background-position: center;
       height: 100vh;
-      min-height: 600px;
+      min-height: 700px;
       display: flex;
       align-items: center;
-      text-align: center;
-      color: var(--white);
+      text-align: left; /* Editorial alignment */
       padding-top: var(--nav-height);
     }
 
-    .hero-content { max-width: 800px; margin: 0 auto; }
-    .hero-content h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
-    .hero-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
-    
-    .hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
-    
-    .hero-cta-primary {
-      background-color: var(--primary-color);
-      border-color: var(--primary-color);
+    .hero-content { 
+        max-width: 700px; 
+        margin-left: 0; /* Align left */
+        margin-right: auto;
     }
     
-    .hero-cta-primary:hover {
-        background-color: transparent;
-        color: var(--white);
-        border-color: var(--white);
+    .hero-content h1 { 
+        font-size: 4rem; 
+        margin-bottom: 24px; 
+        line-height: 1.1; 
+        color: var(--swiss-navy);
+    }
+    
+    .hero-content p { 
+        font-size: 1.25rem; 
+        margin-bottom: 40px; 
+        color: #475569; /* Slate for softer body text */
+        font-weight: 300;
+        max-width: 500px;
+    }
+    
+    .hero-ctas { 
+        display: flex; 
+        gap: 20px; 
+        justify-content: flex-start; /* Left align buttons */
+        flex-wrap: wrap; 
+        margin-bottom: 40px; 
+    }
+    
+    .trust-text { 
+        font-size: 0.9rem; 
+        display: flex; 
+        align-items: center; 
+        gap: 12px;
+        color: var(--swiss-navy);
+        font-weight: 500;
+    }
+    .trust-text i { color: var(--accent-cerulean); }
+
+    /* --- Sections & Cards --- */
+    .how-it-works, .services, .testimonials, .faq-section, .contact, .blog-highlights-section, .instagram-reels { 
+        text-align: center;
+        border-bottom: 1px solid var(--border-color); /* Separators */
+    }
+    
+    .about { 
+        text-align: center; 
+        background-color: var(--pure-white); /* Distinction */
     }
 
-    .hero-cta-secondary { background-color: transparent; border-color: var(--white); }
-    .hero-cta-secondary:hover { background-color: var(--white); color: var(--primary-color); }
+    h2 { 
+        margin-bottom: 60px; 
+        font-size: 2.5rem; 
+        color: var(--swiss-navy); 
+        text-align: center; 
+        font-weight: 600;
+    }
     
-    .trust-text { font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .trust-text i { color: var(--accent-color); }
-
-    /* --- Sections & Cards (Flexbox for Centering) --- */
-    .how-it-works, .about, .services, .why-us, .testimonials, .faq-section, .contact, .blog-highlights-section, .instagram-reels { text-align: center; }
-    h2 { margin-bottom: 50px; font-size: 2.2rem; color: var(--secondary-color); text-align: center; }
-    
-    /* Using Flexbox instead of Grid to center orphan cards */
+    /* Flexbox Grid System */
     .steps-grid, .service-cards, .testimonial-container, .reels-grid, .blog-grid, .faq-items {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
+      gap: 40px; /* Increased gap for "Fresh Air" */
     }
 
+    /* Process Section */
     .step-item { 
-      padding: 30px; 
-      flex: 1 1 250px; /* Grow, Shrink, Basis */
-      max-width: 350px;
+      padding: 0 20px; 
+      flex: 1 1 300px;
+      max-width: 400px;
+      text-align: center;
     }
-    .step-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
-    .step-item h3 { margin-bottom: 15px; font-size: 1.3rem; }
+    .step-icon { 
+        font-size: 2.5rem; 
+        color: var(--accent-cerulean); 
+        margin-bottom: 24px;
+        background: rgba(59, 130, 246, 0.1);
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .step-item h3 { margin-bottom: 12px; font-size: 1.25rem; }
+    .step-item p { color: #64748B; }
 
-    .about { background-color: var(--light-bg); }
-    .about-content { max-width: 800px; margin: 0 auto; }
-    .about p { margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light); }
-
+    /* Service Cards (Minimalist/Architectural) */
     .service-card { 
-      background: var(--white); 
-      border-radius: 10px; 
+      background: var(--pure-white); 
+      border: 1px solid var(--border-color); /* Subtle border */
+      border-radius: 8px; 
       overflow: hidden; 
-      box-shadow: var(--shadow); 
+      box-shadow: none; /* Removed heavy shadow */
       transition: var(--transition); 
-      width: 350px; 
+      width: 380px; 
       display: flex; 
       flex-direction: column; 
     }
-    .service-card:hover { transform: translateY(-10px); }
-    .service-card img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
-    .service-card h3 { padding: 20px 20px 10px; font-size: 1.3rem; }
-    .service-card p { padding: 0 20px 20px; color: var(--text-light); flex-grow: 1; }
-    .service-cta { margin: 0 20px 20px; text-align: center; }
-
-    .why-us { background-color: var(--secondary-color); color: var(--white); }
-    .why-us h2 { color: var(--white); }
-    .reasons { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 900px; margin: 0 auto; }
-    .reasons li { font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
-    .reasons i { color: var(--accent-color); }
-
-    .testimonial { 
-      background: var(--light-bg); 
-      padding: 30px; 
-      border-radius: 10px; 
-      max-width: 500px; 
-      width: 100%;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+    .service-card:hover { 
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05); /* Soft shadow on hover only */
+        border-color: transparent;
     }
-    .testimonial img { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; object-fit: cover; background-color: #ddd; }
-    .testimonial p { font-style: italic; margin-bottom: 15px; }
-    
-    /* --- Instagram Reels Section --- */
-    .instagram-reels.bg-light { background-color: var(--light-bg); }
-    
+    .service-card img { 
+        width: 100%; 
+        height: 240px; 
+        object-fit: cover; 
+        background-color: #F1F5F9; 
+    }
+    .service-card h3 { 
+        padding: 30px 30px 10px; 
+        font-size: 1.5rem; 
+        text-align: left;
+    }
+    .service-card p { 
+        padding: 0 30px 30px; 
+        color: #64748B; 
+        flex-grow: 1; 
+        text-align: left;
+    }
+    .service-cta { 
+        margin: 0 30px 30px; 
+        text-align: center; 
+        background-color: transparent;
+        color: var(--accent-cerulean);
+        border: 1px solid var(--accent-cerulean);
+    }
+    .service-cta:hover {
+        background-color: var(--accent-cerulean);
+        color: var(--pure-white);
+    }
+
+    /* Testimonials */
+    .testimonial { 
+      background: var(--pure-white); 
+      padding: 50px; 
+      border: 1px solid var(--border-color);
+      border-radius: 8px; 
+      max-width: 600px; 
+      width: 100%;
+      text-align: center;
+    }
+    .testimonial img { 
+        width: 70px; 
+        height: 70px; 
+        border-radius: 50%; 
+        margin: 0 auto 20px; 
+        object-fit: cover; 
+        background-color: #ddd; 
+    }
+    .testimonial p { 
+        font-family: 'Clash Display', sans-serif; /* Using display font for quote */
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--swiss-navy);
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+    .testimonial h4 {
+        color: #64748B;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    /* FAQ */
+    .faq-items { 
+        flex-direction: column; 
+        max-width: 800px; 
+        margin: 0 auto; 
+        width: 100%;
+        gap: 20px;
+    }
+    .faq-item { 
+        background: var(--pure-white); 
+        padding: 30px; 
+        border: 1px solid var(--border-color);
+        border-radius: 8px; 
+        text-align: left;
+        width: 100%;
+        transition: var(--transition);
+    }
+    .faq-item:hover { border-color: var(--accent-cerulean); }
+    .faq-item h3 { font-size: 1.15rem; margin-bottom: 10px; color: var(--swiss-navy); }
+    .faq-item p { color: #64748B; }
+
+    /* Contact Form (Clean) */
+    .contact-form { max-width: 700px; margin: 40px auto; display: flex; flex-direction: column; gap: 20px; }
+    .contact-form input, .contact-form select, .contact-form textarea { 
+        width: 100%; 
+        padding: 20px; 
+        border: 1px solid var(--border-color); 
+        background-color: var(--pure-white);
+        border-radius: 4px; 
+        font-family: 'Inter', sans-serif; 
+        font-size: 1rem; 
+        color: var(--swiss-navy);
+        transition: var(--transition);
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--accent-cerulean);
+        background-color: #F8FAFC;
+    }
+    .contact-form textarea { height: 180px; resize: vertical; }
+
+    /* Blog */
+    .blog-post-card { 
+        background: var(--pure-white); 
+        border-radius: 8px; 
+        overflow: hidden; 
+        border: 1px solid var(--border-color);
+        width: 380px;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+    }
+    .blog-post-card:hover { transform: translateY(-5px); border-color: transparent; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .blog-post-card img { width: 100%; height: 240px; object-fit: cover; background-color: #eee; }
+    .blog-post-card h3 { padding: 25px 25px 10px; font-size: 1.25rem; text-align: left; }
+    .blog-post-card p { padding: 0 25px 20px; color: #64748B; font-size: 0.95rem; flex-grow: 1; text-align: left; }
+    .read-more { display: inline-block; margin: 0 25px 25px; color: var(--accent-cerulean); font-weight: 600; text-align: left; width: 100%; }
+
+    /* Instagram */
     .reel-card {
-      background: var(--white);
-      padding: 10px;
+      background: var(--pure-white);
+      padding: 15px;
       border-radius: 12px;
-      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      box-shadow: none;
       width: 100%;
       max-width: 350px;
       transition: var(--transition);
@@ -280,69 +473,38 @@
     }
     .reel-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    }
-    .instagram-media {
-        min-width: 326px !important; 
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     }
 
-    .faq-section { background-color: var(--white); } 
-    /* FAQ items stack vertically, not a grid, but flex column handles responsiveness nicely */
-    .faq-items { 
-        flex-direction: column; 
-        max-width: 800px; 
-        margin: 0 auto; 
-        width: 100%;
-    }
-    .faq-item { 
-        background: var(--light-bg); 
-        padding: 20px; 
-        border-radius: 8px; 
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
-        text-align: left;
-        width: 100%;
-    }
-    .faq-item h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary-color); }
+    /* Social Icons */
+    .social-icons { background: var(--pure-white); padding: 40px 0; border-top: 1px solid var(--border-color); }
+    .social-icons a { color: var(--swiss-navy); font-size: 1.5rem; margin: 0 15px; transition: var(--transition); }
+    .social-icons a:hover { color: var(--accent-cerulean); }
 
-    .contact-form { max-width: 600px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
-    .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 1rem; }
-    .contact-form textarea { height: 150px; resize: vertical; }
-    .contact-form button { background-color: var(--primary-color); color: var(--white); border: none; padding: 15px; font-size: 1.1rem; font-weight: 600; border-radius: 5px; cursor: pointer; transition: var(--transition); }
-    .contact-form button:hover { background-color: var(--secondary-color); }
-
-    .blog-post-card { 
-        background: var(--white); 
-        border-radius: 10px; 
-        overflow: hidden; 
-        box-shadow: var(--shadow); 
-        width: 350px;
-        display: flex;
-        flex-direction: column;
-    }
-    .blog-post-card img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
-    .blog-post-card h3 { padding: 20px 20px 10px; font-size: 1.2rem; }
-    .blog-post-card h3 a { text-decoration: none; color: var(--text-dark); }
-    .blog-post-card p { padding: 0 20px 20px; color: var(--text-light); font-size: 0.95rem; flex-grow: 1; }
-    .read-more { display: inline-block; margin: 0 20px 20px; color: var(--primary-color); font-weight: 600; }
-
-    .social-icons { background: var(--primary-color); padding: 30px 0; }
-    .social-icons a { color: var(--white); font-size: 1.5rem; margin: 0 15px; transition: var(--transition); }
-    .social-icons a:hover { color: var(--accent-color); }
-
+    /* Footer (Swiss Navy Background) */
     footer { 
-      background-color: #222; 
-      color: #999; 
-      padding: 40px 0; 
+      background-color: var(--swiss-navy); 
+      color: rgba(255, 255, 255, 0.7); 
+      padding: 60px 0; 
       font-size: 0.9rem; 
-      text-align: center; /* Centered alignment */
+      text-align: center;
     }
-    footer a { color: #bbb; text-decoration: underline; }
-    footer a:hover { color: var(--white); }
-    footer p { margin: 5px 0; }
+    footer a { color: var(--white); text-decoration: none; opacity: 0.8; }
+    footer a:hover { opacity: 1; text-decoration: underline; }
+    footer p { margin: 10px 0; }
 
     /* --- Responsive Styles --- */
+    @media (max-width: 900px) {
+        .hero-content h1 { font-size: 3rem; }
+    }
+
     @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2rem; }
+      .section-padding { padding: 80px 0; }
+      .hero { text-align: center; justify-content: center; }
+      .hero-content { margin: 0 auto; text-align: center; }
+      .hero-ctas { justify-content: center; }
+      .hero-content h1 { font-size: 2.5rem; }
+      
       .menu-toggle { display: block; }
       .nav-links { 
         position: fixed; 
@@ -350,27 +512,24 @@
         left: -100%; 
         width: 100%; 
         height: calc(100vh - var(--nav-height)); 
-        background: var(--primary-color); 
+        background: var(--canvas-white); 
         flex-direction: column; 
         align-items: center; 
-        justify-content: center; 
+        justify-content: flex-start; 
+        padding-top: 60px;
         transition: 0.3s ease-in-out; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        border-top: 1px solid var(--border-color);
       }
       .nav-links.active { left: 0; }
-      .nav-links ul { flex-direction: column; text-align: center; width: 100%; padding: 20px 0; gap: 20px; }
+      .nav-links ul { flex-direction: column; text-align: center; width: 100%; gap: 30px; }
+      .nav-links a { font-size: 1.2rem; font-weight: 500; }
       
-      /* Mobile Button Visible */
       .cta-button-2 { 
         display: inline-block; 
-        margin-top: 20px;
-        background-color: var(--white);
-        color: var(--primary-color); 
+        margin-top: 30px;
       }
 
-      /* Desktop Button Hidden */
       .header-cta-desktop { display: none; }
-      
       .reasons { flex-direction: column; align-items: flex-start; padding-left: 20px; }
     }
   </style>
@@ -391,18 +550,15 @@
     
     <nav class="nav-links" id="nav-links">
       <ul>
-        <!-- Simplified Links -->
         <li><a href="#about" aria-label="About Brilla NG">About</a></li>
         <li><a href="#services" aria-label="Brilla NG Services">Services</a></li>
         <li><a href="#testimonials" aria-label="Client Testimonials">Reviews</a></li>
         <li><a href="/blog/" aria-label="Brilla NG Blog">Blog</a></li>
         <li><a href="#contact" aria-label="Contact Brilla NG">Contact</a></li>
       </ul>
-      <!-- Mobile "Book Now" (Hidden on Desktop) -->
       <a href="#contact" class="cta-button-2" aria-label="Book a cleaning with Brilla NG" onclick="closeMenu()">Book Now</a>
     </nav>
     
-    <!-- Desktop "Book Now" (Hidden on Mobile) -->
     <a href="#contact" class="cta-button header-cta-desktop" aria-label="Book a cleaning with Brilla NG">Book Now</a>
     
     <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
@@ -410,290 +566,207 @@
 
   <div class="main-wrapper">
 
-    <section class="hero section-padding">
+    <!-- Hero Section: High Key & Airy -->
+    <section class="hero">
       <div class="container">
           <div class="hero-content">
-              <h1>Reclaim Your Time, We'll Handle the Shine: Professional Cleaning Services in Lagos</h1>
-              <p>Brilla.ng delivers impeccable residential & commercial cleaning, giving you peace of mind and a spotless environment, reliably and professionally.</p>
+              <h1>The invisible luxury of a perfectly clean space.</h1>
+              <p>We provide the canvas for life to happen. Impeccable residential & commercial cleaning for a clutter-free environment.</p>
               <div class="hero-ctas">
-                  <a href="#contact" class="cta-button hero-cta-primary" aria-label="Get a Free Home Cleaning Quote">Get a Free Home Cleaning Quote</a>
-                  <a href="#contact" class="cta-button hero-cta-secondary" aria-label="Request Office Cleaning Service">Request Office Cleaning Service</a>
+                  <a href="#contact" class="cta-button" aria-label="Get a Free Home Cleaning Quote">Get a Quote</a>
+                  <a href="#contact" class="cta-button outline" aria-label="Request Office Cleaning Service">Office Cleaning</a>
               </div>
-              <p class="trust-text"><i class="fas fa-star"></i> Trusted by 100+ clients across Nigeria</p>
+              <p class="trust-text"><i class="fas fa-check-circle"></i> Trusted by 100+ clients across Lagos</p>
           </div>
       </div>
     </section>
 
+    <!-- Process -->
     <section id="how-it-works" class="how-it-works section-padding">
         <div class="container">
-            <h2>Our Simple 3-Step Process</h2>
+            <h2>Effortless Restoration</h2>
             <div class="steps-grid">
                 <div class="step-item">
                     <div class="step-icon"><i class="fas fa-hand-pointer"></i></div>
-                    <h3>1. Choose Your Service</h3>
-                    <p>Select the perfect cleaning service for your home or office needs.</p>
+                    <h3>1. Select Service</h3>
+                    <p>Choose the perfect cleaning solution for your sanctuary.</p>
                 </div>
                 <div class="step-item">
                     <div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <h3>2. Schedule Online / Call</h3>
-                    <p>Book your preferred date and time, or simply give us a call.</p>
+                    <h3>2. Schedule</h3>
+                    <p>Book a time that suits your life, online or via call.</p>
                 </div>
                 <div class="step-item">
                     <div class="step-icon"><i class="fas fa-sparkles"></i></div>
-                    <h3>3. Enjoy a Spotless Space</h3>
-                    <p>Our professional team ensures your space is impeccably clean.</p>
+                    <h3>3. Breathe</h3>
+                    <p>Return to a fresh, open, and spotlessly clean space.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About -->
     <section id="about" class="about section-padding">
       <div class="container">
           <div class="about-content">
-              <h2>About Brillá.ng</h2>
-              <p>Brillá.ng is a professional cleaning service dedicated to providing top-notch cleaning solutions for homes and businesses. We believe in excellence, reliability, and a cleaner, healthier environment for everyone.</p>
-              <a href="#services" class="cta-button" aria-label="View Our Cleaning Services">Our Services</a>
+              <h2>A Breath of Fresh Air</h2>
+              <p>Brillá.ng isn't just about cleaning; it's about restoration. We believe a clean home is a sanctuary—a place where you can think, breathe, and live freely. We strip away the clutter so you can focus on what matters.</p>
+              <a href="#services" class="cta-button outline" aria-label="View Our Cleaning Services">Explore Services</a>
           </div>
       </div>
     </section>
 
+    <!-- Services -->
     <section id="services" class="services section-padding">
       <div class="container">
-          <h2>Our Cleaning Services</h2>
+          <h2>Our Services</h2>
           <div class="service-cards">
               <div class="service-card">
                   <img src="images/service-1.jpg" alt="Home Cleaning" loading="lazy" />
                   <h3>Home Cleaning</h3>
-                  <p>We keep your home fresh, tidy, and spotless.</p>
-                  <a href="#contact" class="cta-button service-cta" onclick="prefillService('Home Cleaning')" aria-label="Book Home Cleaning with Brilla NG">Book Home Cleaning</a>
+                  <p>Restore your home to its best self. Fresh, tidy, and spotless.</p>
+                  <a href="#contact" class="cta-button service-cta" onclick="prefillService('Home Cleaning')" aria-label="Book Home Cleaning">Book Now</a>
               </div>
               <div class="service-card">
                   <img src="images/service-2.jpg" alt="Office Cleaning" loading="lazy" />
                   <h3>Office Cleaning</h3>
-                  <p>Maintain a clean and productive work environment.</p>
-                  <a href="#contact" class="cta-button service-cta" onclick="prefillService('Office Cleaning')" aria-label="Book Office Cleaning with Brilla NG">Book Office Cleaning</a>
+                  <p>A clean office is a clear mind. Maintain productivity.</p>
+                  <a href="#contact" class="cta-button service-cta" onclick="prefillService('Office Cleaning')" aria-label="Book Office Cleaning">Book Now</a>
               </div>
               <div class="service-card">
-                  <img src="images/service-3.jpg" alt="Post-Construction Cleaning" loading="lazy" />
-                  <h3>Post-Construction Cleaning</h3>
-                  <p>Transform your new space into a dust-free, livable area.</p>
-                  <a href="#contact" class="cta-button service-cta" onclick="prefillService('Post-Construction Cleaning')" aria-label="Book Post-Construction Cleaning with Brilla NG">Book Post-Construction</a>
+                  <img src="images/service-3.jpg" alt="Post-Construction" loading="lazy" />
+                  <h3>Post-Construction</h3>
+                  <p>Transform chaos into calm. Dust-free and ready for living.</p>
+                  <a href="#contact" class="cta-button service-cta" onclick="prefillService('Post-Construction Cleaning')" aria-label="Book Post-Construction">Book Now</a>
               </div>
           </div>
       </div>
     </section>  
-    <section class="why-us section-padding">
-      <div class="container">
-          <h2>Why Choose Brilla NG?</h2>
-          <ul class="reasons">
-              <li><i class="fas fa-check-circle"></i> Trusted by 100+ clients across Nigeria</li>
-              <li><i class="fas fa-check-circle"></i> Vetted, professional cleaners</li>
-              <li><i class="fas fa-check-circle"></i> Transparent pricing, no surprises</li>
-              <li><i class="fas fa-check-circle"></i> Easy booking via phone or web</li>
-          </ul>
-      </div>
-    </section>
     
+    <!-- Testimonials -->
     <section id="testimonials" class="testimonials section-padding">
       <div class="container">
-          <h2>What Our Clients Say</h2>
+          <h2>Client Stories</h2>
           <div class="testimonial-container">
               <div class="testimonial">
                   <img src="images/testimonial-1.jpg" alt="Client Tolu A." loading="lazy" />
-                  <p>"Brillá.ng left my home sparkling! Highly recommended."</p>
+                  <p>"Brillá.ng left my home feeling like a luxury hotel suite. The attention to detail is unmatched."</p>
                   <h4>- Tolu A.</h4>
               </div>
               <div class="testimonial">
                   <img src="images/testimonial-2.jpg" alt="Client Chinedu O." loading="lazy" />
-                  <p>"Exceptional service! My office has never looked this clean."</p>
+                  <p>"Finally, a service that understands professionalism. My office has never looked this sharp."</p>
                   <h4>- Chinedu O.</h4>
               </div>
           </div>
-          <a href="#contact" class="cta-button" aria-label="Get Started with Brilla NG Cleaning">Get Started</a>
       </div>
     </section>  
 
     <!-- Instagram Reels Section -->
-    <section id="instagram-feed" class="instagram-reels section-padding bg-light">
+    <section id="instagram-feed" class="instagram-reels section-padding">
       <div class="container">
-        <h2>See Us in Action on Instagram</h2>
-        <p style="margin-bottom: 30px; color: #666;">Check out our latest cleaning transformations @brilla.ng</p>
+        <h2>Visual Proof</h2>
+        <p style="margin-bottom: 50px; color: #64748B;">Witness the transformation @brilla.ng</p>
         <div class="reels-grid">
-
           <!-- Reel 1 -->
           <div class="reel-card">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRPbUHBCBHB/"
-              data-instgrm-version="14"
-              style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-              <div style="padding:16px;">
-                <a href="https://www.instagram.com/reel/DRPbUHBCBHB/"
-                  style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-                  target="_blank">
-                  <div style=" display: flex; flex-direction: row; align-items: center;">
-                    <div
-                      style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;">
-                    </div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                      <div
-                        style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;">
-                      </div>
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRPbUHBCBHB/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+              <div style="padding:16px;"> <a href="https://www.instagram.com/reel/DRPbUHBCBHB/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div> </div> </div> </a> </div>
             </blockquote>
           </div>
-
           <!-- Reel 2 -->
           <div class="reel-card">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DROvyg_iIZm/"
-              data-instgrm-version="14"
-              style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-              <div style="padding:16px;">
-                <a href="https://www.instagram.com/reel/DROvyg_iIZm/"
-                  style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-                  target="_blank">
-                  <div style=" display: flex; flex-direction: row; align-items: center;">
-                    <div
-                      style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;">
-                    </div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                      <div
-                        style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;">
-                      </div>
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DROvyg_iIZm/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+              <div style="padding:16px;"> <a href="https://www.instagram.com/reel/DROvyg_iIZm/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div> </div> </div> </a> </div>
             </blockquote>
           </div>
-
           <!-- Reel 3 -->
           <div class="reel-card">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRFk9iVCFDN/"
-              data-instgrm-version="14"
-              style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-              <div style="padding:16px;">
-                <a href="https://www.instagram.com/reel/DRFk9iVCFDN/"
-                  style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-                  target="_blank">
-                  <div style=" display: flex; flex-direction: row; align-items: center;">
-                    <div
-                      style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;">
-                    </div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                      <div
-                        style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;">
-                      </div>
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRFk9iVCFDN/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+              <div style="padding:16px;"> <a href="https://www.instagram.com/reel/DRFk9iVCFDN/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div> </div> </div> </a> </div>
             </blockquote>
           </div>
-
           <!-- Reel 4 -->
           <div class="reel-card">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPLVDwqiJ_1/"
-              data-instgrm-version="14"
-              style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-              <div style="padding:16px;">
-                <a href="https://www.instagram.com/reel/DPLVDwqiJ_1/"
-                  style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-                  target="_blank">
-                  <div style=" display: flex; flex-direction: row; align-items: center;">
-                    <div
-                      style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;">
-                    </div>
-                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                      <div
-                        style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;">
-                      </div>
-                      <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPLVDwqiJ_1/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+              <div style="padding:16px;"> <a href="https://www.instagram.com/reel/DPLVDwqiJ_1/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div> </div> </div> </a> </div>
             </blockquote>
           </div>
-
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="faq-section section-padding">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Common Questions</h2>
             <div class="faq-items">
                 <div class="faq-item">
                     <h3>How do I book a cleaning service?</h3>
-                    <p>You can easily book online through our contact form above or by calling us directly at +234 814 622 8911.</p>
+                    <p>You can easily book online through our contact form above or by calling us directly.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Are your cleaners vetted and insured?</h3>
-                    <p>Yes, all our cleaners undergo thorough background checks and are fully insured for your peace of mind and protection.</p>
+                    <h3>Are your cleaners vetted?</h3>
+                    <p>Yes, all our cleaners undergo thorough background checks for your peace of mind.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What areas in Lagos do you cover?</h3>
-                    <p>We provide professional cleaning services across various locations in Lagos. Please contact us to confirm service availability in your specific area.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do I need to provide cleaning supplies?</h3>
-                    <p>No, our team comes fully equipped with all the necessary professional-grade cleaning supplies and equipment to get the job done right.</p>
+                    <h3>What areas do you cover?</h3>
+                    <p>We provide professional cleaning services across various locations in Lagos.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="contact section-padding">
       <div class="container">
-          <h2>Book a Cleaning Today</h2>
+          <h2>Begin Your Restoration</h2>
           <p>Let’s give your space the shine it deserves.</p>
           <form id="contact-form" class="contact-form" action="https://formsubmit.co/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Booking Request via Brillá.ng">
               <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
               <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
-              <input type="tel" name="phone" placeholder="Your Phone Number (e.g., 08012345678)" required aria-label="Your Phone Number" />
+              <input type="tel" name="phone" placeholder="Your Phone Number" required aria-label="Your Phone Number" />
               <select name="service" id="service-select" required aria-label="Select a Service">
                   <option value="">Select a Service</option>
                   <option value="Home Cleaning">Home Cleaning</option>
                   <option value="Office Cleaning">Office Cleaning</option>
-                  <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+                  <option value="Post-Construction Cleaning">Post-Construction</option>
               </select>
               <textarea name="message" placeholder="Additional Details (Optional)" aria-label="Additional Details"></textarea>
-              <button type="submit" id="submit-btn">Send</button>
+              <button type="submit" id="submit-btn" class="cta-button">Send Request</button>
               <p id="loading-message" style="display: none;">Sending...</p>
           </form>
-          <h2>Or</h2>
-          <a href="tel:08146228911" class="cta-button" aria-label="Call Brilla NG to book">Call 08146228911</a>
+          <div style="margin-top: 30px;">
+              <h2>Or</h2>
+              <a href="tel:08146228911" class="cta-button outline" aria-label="Call Brilla NG to book">Call 08146228911</a>
+          </div>
       </div>
     </section>  
 
-    <section id="blog-highlights" class="blog-highlights-section section-padding bg-light">
+    <!-- Blog -->
+    <section id="blog-highlights" class="blog-highlights-section section-padding">
         <div class="container">
-            <h2>Latest from Our Blog</h2>
+            <h2>Journal</h2>
             <div class="blog-grid">
                 <div class="blog-post-card">
-                    <img src="images/blog-1.jpeg" alt="Featured blog post image: How to Choose a Cleaning Service" loading="lazy" />
-                    <h3><a href="/blog/how-to-choose-cleaning-service.html">How to Choose the Right Cleaning Service for Your Needs</a></h3>
-                    <p>Finding the perfect cleaning service can be daunting. Here are key factors to consider.</p>
-                    <a href="/blog/how-to-choose-cleaning-service.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    <img src="images/blog-1.jpeg" alt="Blog: Choosing a Service" loading="lazy" />
+                    <h3><a href="/blog/how-to-choose-cleaning-service.html">Choosing the Right Service</a></h3>
+                    <p>Key factors to consider for your home.</p>
+                    <a href="/blog/how-to-choose-cleaning-service.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <img src="images/blog-2.jpeg" alt="Featured blog post image: Affordable Cleaning in Lagos" loading="lazy" />
-                    <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Cleaning Services in Lagos: Quality You Can Trust</a></h3>
-                    <p>Discover how Brilla.ng offers top-tier cleaning solutions at competitive prices in Lagos.</p>
-                    <a href="/blog/affordable-cleaning-lagos.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    <img src="images/blog-2.jpeg" alt="Blog: Affordable Cleaning" loading="lazy" />
+                    <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Quality in Lagos</a></h3>
+                    <p>Top-tier cleaning solutions at competitive prices.</p>
+                    <a href="/blog/affordable-cleaning-lagos.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="blog-post-card">
-                    <img src="images/blog-3.jpeg" alt="Featured blog post image: Post-Construction Cleaning Checklist" loading="lazy" />
-                    <h3><a href="/blog/post-construction-checklist.html">Your Ultimate Post-Construction Cleaning Checklist</a></h3>
-                    <p>Ensure your newly renovated space is spotless and ready for occupancy with our comprehensive guide.</p>
-                    <a href="/blog/post-construction-checklist.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    <img src="images/blog-3.jpeg" alt="Blog: Post-Construction" loading="lazy" />
+                    <h3><a href="/blog/post-construction-checklist.html">Post-Construction Checklist</a></h3>
+                    <p>Ensure your new space is ready for occupancy.</p>
+                    <a href="/blog/post-construction-checklist.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -702,15 +775,16 @@
   </div>
 
   <div class="social-icons">
-    <a href="https://facebook.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://twitter.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-    <a href="https://instagram.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://wa.me/2348146228911" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <div class="container" style="text-align: center;">
+        <a href="https://facebook.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://instagram.com/brilla.ng" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
   </div>
   
   <footer>
     <div class="container">
-      <p>&copy; 2025 Brillá.ng. Shine Beyond Clean.</p>
+      <p>&copy; 2026 Brillá.ng. All rights reserved.</p>
       <p><a href="/lagos-cleaning-services.html" aria-label="Lagos Cleaning Services page">Lagos Cleaning Services</a></p>
     </div>
   </footer> 
@@ -719,9 +793,7 @@
   <script async src="//www.instagram.com/embed.js"></script>
 
   <script>
-    // --- JS (Inline for Preview Functionality) ---
-    
-    // Toggle Mobile Menu
+    // --- JS ---
     const mobileMenuBtn = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
     const navLinksItems = document.querySelectorAll('.nav-links a');
@@ -753,17 +825,15 @@
         link.addEventListener('click', closeMenu);
     });
 
-    // Prefill Service Function
     function prefillService(serviceType) {
       const select = document.getElementById("service-select");
       if (select) { 
           select.value = serviceType;
           const contactSection = document.getElementById("contact");
           if (contactSection) {
-              const headerOffset = document.querySelector('header').offsetHeight;
+              const headerOffset = 90; // match nav height
               const elementPosition = contactSection.getBoundingClientRect().top;
               const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
               window.scrollTo({
                   top: offsetPosition,
                   behavior: "smooth"
@@ -771,18 +841,6 @@
           }
       }
     }
-
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (header) {
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        }
-    });
   </script>
 </body>
 </html>
