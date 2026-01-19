@@ -400,9 +400,11 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.6s ease;
+        /* Crop/Zoom to hide edges (e.g. watermarks) */
+        transform: scale(1.1);
     }
     .service-card:hover img {
-        transform: scale(1.05);
+        transform: scale(1.15);
     }
     
     .service-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -430,11 +432,40 @@
     }
     .blog-post-card:hover { transform: translateY(-5px); border-color: transparent; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     /* Target img inside picture inside blog card */
-    .blog-post-card img { width: 100%; height: 240px; object-fit: cover; background-color: #eee; }
+    .blog-post-card img { 
+        width: 100%; 
+        height: 240px; 
+        object-fit: cover; 
+        background-color: #eee;
+        transition: transform 0.6s ease;
+        /* Crop/Zoom to hide edges */
+        transform: scale(1.1);
+    }
+    .blog-post-card:hover img { transform: scale(1.15); }
+    
     .blog-post-card h3 { padding: 25px 25px 10px; font-size: 1.25rem; text-align: left; }
     .blog-post-card p { padding: 0 25px 20px; color: #64748B; font-size: 0.95rem; flex-grow: 1; text-align: left; }
     .read-more { display: inline-block; margin: 0 25px 25px; color: var(--accent-cerulean); font-weight: 600; text-align: left; width: 100%; }
 
+    /* Instagram Reels */
+    .reel-card {
+      background: var(--pure-white);
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: none;
+      width: 100%;
+      max-width: 350px;
+      transition: var(--transition);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px; 
+    }
+    .reel-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
 
     /* Testimonials (Speech Bubble Style) */
     .testimonial-card {
@@ -615,7 +646,6 @@
 
   <main>
     <!-- Hero Section -->
-    <!-- Updated CSS handles WebP/JPG switching via image-set -->
     <section class="hero">
       <div class="container">
           <div class="hero-content">
@@ -743,6 +773,34 @@
           </div>
       </div>
     </section>  
+    
+    <!-- RESTORED: Instagram Reels Section -->
+    <section id="instagram-feed" class="section-padding">
+      <div class="container">
+        <h2 class="text-center">Visual Proof</h2>
+        <p class="section-subtitle">Witness the transformation @brilla.ng</p>
+        <div class="grid-3" style="justify-content: center;">
+          <!-- Reel 1 -->
+           <div class="reel-card">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRPbUHBCBHB/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+               <div style="padding:16px;"> <a href="https://www.instagram.com/reel/DRPbUHBCBHB/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div> </div> </div> </a> </div>
+            </blockquote>
+          </div>
+          <!-- Reel 2 -->
+          <div class="reel-card">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DROvyg_iIZm/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+               <div style="padding:16px;"> <a href="https://www.instagram.com/reel/DROvyg_iIZm/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div> </div> </div> </a> </div>
+            </blockquote>
+          </div>
+           <!-- Reel 3 (Requested Last Video) -->
+           <div class="reel-card">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPLVDwqiJ_1/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+               <div style="padding:16px;"> <a href="https://www.instagram.com/reel/DPLVDwqiJ_1/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; height: 14px; width: 60px;"></div> </div> </div> </a> </div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Testimonials -->
     <section id="testimonials" class="section-padding" style="background-color: var(--canvas-white);">
@@ -775,7 +833,7 @@
       </div>
     </section>  
     
-    <!-- Blog Section (Added with WebP support) -->
+    <!-- Blog Section -->
     <section id="blog-highlights" class="section-padding">
         <div class="container">
             <h2 class="text-center">Journal</h2>
@@ -932,6 +990,9 @@
       </div>
     </div>
   </footer> 
+
+  <!-- Instagram Embed Script -->
+  <script async src="//www.instagram.com/embed.js"></script>
 
   <script>
     // Mobile Menu Toggle
