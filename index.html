@@ -212,10 +212,19 @@
     /* --- Hero Section --- */
     .hero {
       background-color: var(--canvas-white);
-      /* Improved gradient overlay for text readability */
+      /* Fallback for browsers that don't support image-set */
       background-image: 
         linear-gradient(90deg, #FAFAFA 0%, rgba(250, 250, 250, 0.95) 50%, rgba(250, 250, 250, 0.2) 100%),
         url('images/hero-bg.jpg');
+      
+      /* Modern Image Set for WebP support */
+      background-image: 
+        linear-gradient(90deg, #FAFAFA 0%, rgba(250, 250, 250, 0.95) 50%, rgba(250, 250, 250, 0.2) 100%),
+        -webkit-image-set(url('images/hero-bg.webp') 1x, url('images/hero-bg.jpg') 1x);
+      background-image: 
+        linear-gradient(90deg, #FAFAFA 0%, rgba(250, 250, 250, 0.95) 50%, rgba(250, 250, 250, 0.2) 100%),
+        image-set(url('images/hero-bg.webp') 1x, url('images/hero-bg.jpg') 1x);
+
       background-size: cover;
       background-position: center right;
       min-height: 100vh; /* Full viewport height */
@@ -384,6 +393,8 @@
         background: #F1F5F9;
         position: relative;
     }
+    
+    /* Image targeting for Picture element inside cards */
     .service-card img {
         width: 100%;
         height: 100%;
@@ -393,6 +404,7 @@
     .service-card:hover img {
         transform: scale(1.05);
     }
+    
     .service-content { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
     .service-content h3 { margin-bottom: 12px; }
     .service-content p { color: var(--text-muted); margin-bottom: 24px; flex-grow: 1; }
@@ -404,6 +416,25 @@
         gap: 8px;
     }
     .service-link:hover { gap: 12px; } /* Arrow slide effect */
+
+    /* Blog Cards */
+    .blog-post-card { 
+        background: var(--pure-white); 
+        border-radius: 8px; 
+        overflow: hidden; 
+        border: 1px solid var(--border-color);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+    }
+    .blog-post-card:hover { transform: translateY(-5px); border-color: transparent; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    /* Target img inside picture inside blog card */
+    .blog-post-card img { width: 100%; height: 240px; object-fit: cover; background-color: #eee; }
+    .blog-post-card h3 { padding: 25px 25px 10px; font-size: 1.25rem; text-align: left; }
+    .blog-post-card p { padding: 0 25px 20px; color: #64748B; font-size: 0.95rem; flex-grow: 1; text-align: left; }
+    .read-more { display: inline-block; margin: 0 25px 25px; color: var(--accent-cerulean); font-weight: 600; text-align: left; width: 100%; }
+
 
     /* Testimonials (Speech Bubble Style) */
     .testimonial-card {
@@ -584,6 +615,7 @@
 
   <main>
     <!-- Hero Section -->
+    <!-- Updated CSS handles WebP/JPG switching via image-set -->
     <section class="hero">
       <div class="container">
           <div class="hero-content">
@@ -668,7 +700,11 @@
           <div class="grid-3">
               <div class="service-card">
                   <div class="service-img-wrapper">
-                      <img src="images/service-1.jpg" alt="Home Cleaning" loading="lazy" />
+                      <!-- WebP with Fallback -->
+                      <picture>
+                        <source srcset="images/service-1.webp" type="image/webp">
+                        <img src="images/service-1.jpg" alt="Sparkling clean living room after home cleaning" loading="lazy">
+                      </picture>
                   </div>
                   <div class="service-content">
                       <h3>Home Cleaning</h3>
@@ -678,7 +714,11 @@
               </div>
               <div class="service-card">
                   <div class="service-img-wrapper">
-                      <img src="images/service-2.jpg" alt="Office Cleaning" loading="lazy" />
+                      <!-- WebP with Fallback -->
+                      <picture>
+                        <source srcset="images/service-2.webp" type="image/webp">
+                        <img src="images/service-2.jpg" alt="Modern organized office space" loading="lazy">
+                      </picture>
                   </div>
                   <div class="service-content">
                       <h3>Office Cleaning</h3>
@@ -688,7 +728,11 @@
               </div>
               <div class="service-card">
                   <div class="service-img-wrapper">
-                      <img src="images/service-3.jpg" alt="Post-Construction" loading="lazy" />
+                      <!-- WebP with Fallback -->
+                      <picture>
+                        <source srcset="images/service-3.webp" type="image/webp">
+                        <img src="images/service-3.jpg" alt="Dust-free post-construction apartment" loading="lazy">
+                      </picture>
                   </div>
                   <div class="service-content">
                       <h3>Post-Construction</h3>
@@ -723,7 +767,6 @@
                       <div class="author-avatar" style="background-color: var(--accent-cerulean);">CO</div>
                       <div class="author-info">
                           <h4>Chinedu O.</h4>
-                          <!-- UPDATED: Removed dummy title "Founder, TechStart" -->
                           <span>Ikeja, Lagos</span>
                       </div>
                   </div>
@@ -731,6 +774,42 @@
           </div>
       </div>
     </section>  
+    
+    <!-- Blog Section (Added with WebP support) -->
+    <section id="blog-highlights" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Journal</h2>
+            <div class="grid-3">
+                <div class="blog-post-card">
+                    <picture>
+                        <source srcset="images/blog-1.webp" type="image/webp">
+                        <img src="images/blog-1.jpeg" alt="Cleaning professional holding a checklist" loading="lazy">
+                    </picture>
+                    <h3><a href="/blog/how-to-choose-cleaning-service.html">Choosing the Right Service</a></h3>
+                    <p>Key factors to consider for your home.</p>
+                    <a href="/blog/how-to-choose-cleaning-service.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-post-card">
+                    <picture>
+                        <source srcset="images/blog-2.webp" type="image/webp">
+                        <img src="images/blog-2.jpeg" alt="Affordable cleaning in Lagos" loading="lazy">
+                    </picture>
+                    <h3><a href="/blog/affordable-cleaning-lagos.html">Affordable Quality in Lagos</a></h3>
+                    <p>Top-tier cleaning solutions at competitive prices.</p>
+                    <a href="/blog/affordable-cleaning-lagos.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-post-card">
+                    <picture>
+                        <source srcset="images/blog-3.webp" type="image/webp">
+                        <img src="images/blog-3.jpeg" alt="Post-Construction cleaning checklist" loading="lazy">
+                    </picture>
+                    <h3><a href="/blog/post-construction-checklist.html">Post-Construction Checklist</a></h3>
+                    <p>Ensure your new space is ready for occupancy.</p>
+                    <a href="/blog/post-construction-checklist.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ -->
     <section id="faq" class="section-padding" style="background-color: #FFF;">
@@ -773,7 +852,6 @@
               <!-- Main Form -->
               <form id="booking-form" action="https://formsubmit.co/ajax/845520e20f2df2c9a137a0f66d27f7bb" method="POST">
                   <input type="hidden" name="_captcha" value="false" />
-                  <!-- Hidden field to force JSON response if JS fails (optional safeguard) -->
                   <input type="hidden" name="_template" value="table">
                   
                   <div class="grid-3" style="grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
@@ -841,7 +919,6 @@
               <h4>Contact</h4>
               <ul>
                   <li><a href="tel:08146228911">0814 622 8911</a></li>
-                  <!-- REMOVED: hello@brilla.ng -->
                   <li style="margin-top: 10px;">
                       <a href="#" style="margin-right: 10px;"><i class="fab fa-instagram"></i></a>
                       <a href="#" style="margin-right: 10px;"><i class="fab fa-twitter"></i></a>
