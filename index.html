@@ -3,17 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Brilla NG - Premium residential and commercial cleaning services in Lagos. We handle the grime so you can focus on the grind." />
+  <meta name="description" content="Brilla NG - Premium residential and commercial cleaning services in Lagos. We handle the grime so you can focus on the grind. Book online in 60s." />
   <meta name="keywords" content="cleaning services, home cleaning lagos, office cleaning, post-construction cleaning, vetted cleaners, Brilla NG" />
   <meta name="author" content="Brillá.ng" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://brilla.ng/" />
   <title>Brilla NG | Shine, Beyond Clean</title>
 
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Brillá.ng — Premium cleaning in Lagos" />
+  <meta property="og:description" content="We handle the grime so you can focus on the grind — Book in 60 seconds." />
+  <meta property="og:image" content="https://brilla.ng/images/og-hero.webp" />
+  <meta property="og:url" content="https://brilla.ng/" />
+  <meta property="og:site_name" content="Brillá.ng" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brillá.ng — Premium cleaning in Lagos" />
+  <meta name="twitter:description" content="Restore your home — vetted pros, eco products, book in 60s." />
+  <meta name="twitter:image" content="https://brilla.ng/images/og-hero.webp" />
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp">
+
+  <!-- Schema.org JSON-LD (Local Business + FAQ) -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Brillá.ng",
+      "image": "https://brilla.ng/images/logo.png",
+      "telephone": "+2348146228911",
+      "email": "hello@brilla.ng",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lagos",
+        "addressCountry": "NG"
+      },
+      "url": "https://brilla.ng/",
+      "priceRange": "₦₦",
+      "sameAs": ["https://www.instagram.com/brilla.ng/"],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I book a cleaning service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can easily book online using our website form, or click the WhatsApp button to chat with us directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your cleaners vetted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. All our cleaners undergo thorough background checks and rigorous training before entering any home."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas in Lagos do you cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We service Lekki, Ikoyi, Victoria Island, Ikeja and most of Mainland Lagos."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Typography System: Clash Display (Headings) & Inter (Body) -->
+  <!-- Typography System -->
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +139,23 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Accessibility: Skip Link */
+    .skip-link {
+        position: absolute;
+        top: -9999px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent-cerulean);
+        color: white;
+        padding: 12px 24px;
+        z-index: 9999;
+        text-decoration: none;
+        border-radius: 0 0 8px 8px;
+        font-weight: 500;
+        transition: top 0.3s ease;
+    }
+    .skip-link:focus { top: 0; }
 
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
@@ -130,10 +222,9 @@
         transform: translateY(-2px);
     }
 
-    /* --- CAROUSEL SYSTEM (Replaces Grids) --- */
+    /* --- CAROUSEL SYSTEM --- */
     .carousel-wrapper {
         position: relative;
-        /* Ensure arrows can sit outside or on edge */
     }
 
     .carousel-track {
@@ -141,21 +232,20 @@
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         gap: 32px;
-        padding: 20px 4px 40px; /* Bottom padding for shadows */
+        padding: 20px 4px 40px;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
+        scrollbar-width: none;
     }
 
     .carousel-track::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+        display: none;
     }
 
-    /* Standard Carousel Items */
     .carousel-item {
         flex: 0 0 auto;
         scroll-snap-align: center;
-        width: 85vw; /* Mobile default */
-        max-width: 380px; /* Desktop Card Width */
+        width: 85vw;
+        max-width: 380px;
     }
 
     /* Navigation Arrows */
@@ -675,6 +765,9 @@
 </head>
 <body>
 
+  <!-- Accessibility Skip Link -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/2348146228911" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
@@ -699,20 +792,20 @@
 
     <div style="display:flex; align-items:center;">
         <a href="#contact" class="cta-button header-cta-desktop">Book Now</a>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        <div class="menu-toggle" id="mobile-menu" role="button" aria-label="Toggle Menu" tabindex="0"><i class="fas fa-bars"></i></div>
     </div>
   </header>  
 
-  <main>
+  <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
           <div class="hero-content">
               <h1>Shine, beyond clean.</h1>
-              <p>We handle the grime so you can focus on the grind. Premium residential & commercial cleaning in Lagos for those who value their time.</p>
+              <p>We handle the grime so you can focus on the grind. Premium residential & commercial cleaning in Lagos — Book online in 60s.</p>
               
               <div class="hero-ctas">
-                  <a href="#contact" class="cta-button">Get a Price Quote</a>
+                  <a href="#contact" class="cta-button">Get Quote</a>
                   <a href="#services" class="cta-button outline">View Services</a>
               </div>
               
@@ -730,7 +823,7 @@
             <p class="section-subtitle">We've simplified the process so you can get back to what matters.</p>
             
             <div class="carousel-wrapper">
-                <button class="nav-arrow prev" onclick="scrollCarousel('process-track', -1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-arrow prev" aria-label="Previous Step" onclick="scrollCarousel('process-track', -1)"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track" id="process-track">
                     <div class="carousel-item">
                         <div class="process-card">
@@ -754,7 +847,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="nav-arrow next" onclick="scrollCarousel('process-track', 1)"><i class="fas fa-chevron-right"></i></button>
+                <button class="nav-arrow next" aria-label="Next Step" onclick="scrollCarousel('process-track', 1)"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -766,7 +859,7 @@
             <p class="section-subtitle">We don't just clean; we care for your space.</p>
             
             <div class="carousel-wrapper">
-                <button class="nav-arrow prev" onclick="scrollCarousel('features-track', -1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-arrow prev" aria-label="Previous Feature" onclick="scrollCarousel('features-track', -1)"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track" id="features-track">
                     <div class="carousel-item" style="max-width: 300px;">
                         <div class="feature-card">
@@ -785,8 +878,8 @@
                     <div class="carousel-item" style="max-width: 300px;">
                         <div class="feature-card">
                             <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                            <h3>On Time</h3>
-                            <p>We respect your schedule. No "African time", just on time.</p>
+                            <h3>Punctual & Reliable</h3>
+                            <p>We respect your schedule. Always on time, no excuses.</p>
                         </div>
                     </div>
                     <div class="carousel-item" style="max-width: 300px;">
@@ -797,7 +890,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="nav-arrow next" onclick="scrollCarousel('features-track', 1)"><i class="fas fa-chevron-right"></i></button>
+                <button class="nav-arrow next" aria-label="Next Feature" onclick="scrollCarousel('features-track', 1)"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -809,7 +902,7 @@
           <p class="section-subtitle">Tailored solutions for every space.</p>
           
           <div class="carousel-wrapper">
-              <button class="nav-arrow prev" onclick="scrollCarousel('services-track', -1)"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-arrow prev" aria-label="Previous Service" onclick="scrollCarousel('services-track', -1)"><i class="fas fa-chevron-left"></i></button>
               <div class="carousel-track" id="services-track">
                   <!-- Item 1 -->
                   <div class="carousel-item">
@@ -860,7 +953,7 @@
                       </div>
                   </div>
               </div>
-              <button class="nav-arrow next" onclick="scrollCarousel('services-track', 1)"><i class="fas fa-chevron-right"></i></button>
+              <button class="nav-arrow next" aria-label="Next Service" onclick="scrollCarousel('services-track', 1)"><i class="fas fa-chevron-right"></i></button>
           </div>
       </div>
     </section>  
@@ -872,7 +965,7 @@
         <p class="section-subtitle">Witness the transformation @brilla.ng</p>
         
         <div class="carousel-wrapper">
-            <button class="nav-arrow prev" onclick="scrollCarousel('reels-track', -1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-arrow prev" aria-label="Previous Video" onclick="scrollCarousel('reels-track', -1)"><i class="fas fa-chevron-left"></i></button>
             <div class="carousel-track" id="reels-track">
                 <!-- Reel 1 -->
                 <div class="carousel-item" style="max-width: 350px;">
@@ -899,7 +992,7 @@
                     </div>
                 </div>
             </div>
-            <button class="nav-arrow next" onclick="scrollCarousel('reels-track', 1)"><i class="fas fa-chevron-right"></i></button>
+            <button class="nav-arrow next" aria-label="Next Video" onclick="scrollCarousel('reels-track', 1)"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
     </section>
@@ -911,7 +1004,7 @@
           <p class="section-subtitle">Don't just take our word for it.</p>
           
           <div class="carousel-wrapper">
-              <button class="nav-arrow prev" onclick="scrollCarousel('reviews-track', -1)"><i class="fas fa-chevron-left"></i></button>
+              <button class="nav-arrow prev" aria-label="Previous Review" onclick="scrollCarousel('reviews-track', -1)"><i class="fas fa-chevron-left"></i></button>
               <div class="carousel-track" id="reviews-track">
                   <div class="carousel-item" style="max-width: 450px;">
                       <div class="testimonial-card">
@@ -938,7 +1031,7 @@
                       </div>
                   </div>
               </div>
-              <button class="nav-arrow next" onclick="scrollCarousel('reviews-track', 1)"><i class="fas fa-chevron-right"></i></button>
+              <button class="nav-arrow next" aria-label="Next Review" onclick="scrollCarousel('reviews-track', 1)"><i class="fas fa-chevron-right"></i></button>
           </div>
       </div>
     </section>  
@@ -949,7 +1042,7 @@
             <h2 class="text-center">Journal</h2>
             
             <div class="carousel-wrapper">
-                <button class="nav-arrow prev" onclick="scrollCarousel('blog-track', -1)"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-arrow prev" aria-label="Previous Article" onclick="scrollCarousel('blog-track', -1)"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track" id="blog-track">
                     <div class="carousel-item">
                         <div class="blog-post-card">
@@ -985,7 +1078,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="nav-arrow next" onclick="scrollCarousel('blog-track', 1)"><i class="fas fa-chevron-right"></i></button>
+                <button class="nav-arrow next" aria-label="Next Article" onclick="scrollCarousel('blog-track', 1)"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -1144,6 +1237,7 @@
           if (navLinks.classList.contains('active')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
+            // Accessibility: Update aria-expanded if we were using it, or just rely on class toggling for now
           } else {
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
@@ -1236,6 +1330,3 @@
   </script>
 </body>
 </html>
-
-
-
